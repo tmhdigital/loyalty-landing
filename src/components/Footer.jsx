@@ -17,17 +17,19 @@ const Footer = () => {
         <div>
           <p className="font-semibold text-ink text-[14px] mb-4">Product</p>
           <ul className="space-y-3 text-[14px] text-muted">
-            <li><a href="#features" className="hover:text-primary">Features</a></li>
-            <li><a href="#how-it-works" className="hover:text-primary">How it works</a></li>
-            <li><a href="#faq" className="hover:text-primary">FAQ</a></li>
+            <li><a href="/#features" className="hover:text-primary">Features</a></li>
+            <li><a href="/#how-it-works" className="hover:text-primary">How it works</a></li>
+            <li><a href="/#mobile-apps" className="hover:text-primary">Mobile apps</a></li>
+            <li><a href="/#benefits" className="hover:text-primary">Benefits</a></li>
+            <li><a href="/#faq" className="hover:text-primary">FAQ</a></li>
           </ul>
         </div>
 
         <div>
           <p className="font-semibold text-ink text-[14px] mb-4">Dashboards</p>
           <ul className="space-y-3 text-[14px] text-muted">
-            <li><a target="_blank" href={DASHBOARD_LINKS.business} className="hover:text-primary">Business dashboard</a></li>
-            <li><a target="_blank" href={DASHBOARD_LINKS.admin} className="hover:text-primary">Admin dashboard</a></li>
+            <li><a target="_blank" rel="noopener noreferrer" href={DASHBOARD_LINKS.business} className="hover:text-primary">Business dashboard</a></li>
+            <li><a target="_blank" rel="noopener noreferrer" href={DASHBOARD_LINKS.admin} className="hover:text-primary">Admin dashboard</a></li>
           </ul>
         </div>
 

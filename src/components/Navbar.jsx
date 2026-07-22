@@ -6,6 +6,8 @@ import { DASHBOARD_LINKS } from "../config";
 const NAV_LINKS = [
   { label: "Features", href: "/#features" },
   { label: "How it works", href: "/#how-it-works" },
+  { label: "Mobile apps", href: "/#mobile-apps" },
+  { label: "Benefits", href: "/#benefits" },
   { label: "For business", href: "/#for-business" },
   { label: "FAQ", href: "/#faq" },
 ];
@@ -31,7 +33,7 @@ const Navbar = () => {
           <img src={logo} alt="Rewaldo" className="h-9 w-auto" />
         </Link>
 
-        <div className="hidden lg:flex items-center gap-9">
+        <div className="hidden xl:flex items-center gap-6">
           {NAV_LINKS.map((link) => (
             <a
               key={link.label}
@@ -43,15 +45,19 @@ const Navbar = () => {
           ))}
         </div>
 
-        <div className="hidden lg:flex items-center gap-3">
+        <div className="hidden xl:flex items-center gap-3">
           <a
             href={DASHBOARD_LINKS.admin}
+            target="_blank"
+            rel="noopener noreferrer"
             className="px-5 py-2.5 rounded-pill text-[14px] font-semibold text-ink border border-line hover:border-primary hover:text-primary transition-colors"
           >
             Admin login
           </a>
           <a
             href={DASHBOARD_LINKS.business}
+            target="_blank"
+            rel="noopener noreferrer"
             className="px-5 py-2.5 rounded-pill text-[14px] font-semibold text-white bg-primary hover:bg-primaryDark shadow-soft transition-colors"
           >
             Business login
@@ -61,7 +67,7 @@ const Navbar = () => {
         <button
           aria-label="Toggle menu"
           onClick={() => setOpen((v) => !v)}
-          className="lg:hidden w-10 h-10 flex items-center justify-center rounded-full border border-line"
+          className="xl:hidden w-10 h-10 flex items-center justify-center rounded-full border border-line"
         >
           <div className="flex flex-col gap-1.5">
             <span
@@ -78,7 +84,7 @@ const Navbar = () => {
       </nav>
 
       {open && (
-        <div className="lg:hidden bg-white border-t border-line px-6 py-6 flex flex-col gap-5 shadow-card">
+        <div className="xl:hidden bg-white border-t border-line px-6 py-6 flex flex-col gap-5 shadow-card max-h-[calc(100vh-5rem)] overflow-y-auto">
           {NAV_LINKS.map((link) => (
             <a
               key={link.label}
@@ -92,16 +98,18 @@ const Navbar = () => {
           <div className="flex flex-col gap-3 pt-2">
             <a
               href={DASHBOARD_LINKS.admin}
+              target="_blank"
+              rel="noopener noreferrer"
               className="w-full text-center px-5 py-3 rounded-pill text-[14px] font-semibold text-ink border border-line"
-           target="_blank"
-           >
+            >
               Admin login
             </a>
             <a
               href={DASHBOARD_LINKS.business}
+              target="_blank"
+              rel="noopener noreferrer"
               className="w-full text-center px-5 py-3 rounded-pill text-[14px] font-semibold text-white bg-primary"
-           
-           target="_blank">
+            >
               Business login
             </a>
           </div>

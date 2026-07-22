@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Reveal from "./Reveal";
 
 const FAQS = [
   {
@@ -51,26 +52,30 @@ const FAQ = () => {
   return (
     <section id="faq" className="py-24 lg:py-32 bg-[#FAFBFA]">
       <div className="max-w-4xl mx-auto px-6 lg:px-10">
-        <div className="mb-12">
-          <p className="text-primary font-semibold text-sm tracking-wide uppercase mb-3">
-            FAQ
-          </p>
-          <h2 className="text-[32px] sm:text-[40px] font-bold text-secondary leading-tight">
-            Common questions
-          </h2>
-        </div>
+        <Reveal>
+          <div className="mb-12">
+            <p className="text-primary font-semibold text-sm tracking-wide uppercase mb-3">
+              FAQ
+            </p>
+            <h2 className="text-[32px] sm:text-[40px] font-bold text-secondary leading-tight">
+              Common questions
+            </h2>
+          </div>
+        </Reveal>
 
-        <div>
-          {FAQS.map((item, i) => (
-            <FAQItem
-              key={item.q}
-              q={item.q}
-              a={item.a}
-              isOpen={openIndex === i}
-              onClick={() => setOpenIndex(openIndex === i ? -1 : i)}
-            />
-          ))}
-        </div>
+        <Reveal delay={80}>
+          <div>
+            {FAQS.map((item, i) => (
+              <FAQItem
+                key={item.q}
+                q={item.q}
+                a={item.a}
+                isOpen={openIndex === i}
+                onClick={() => setOpenIndex(openIndex === i ? -1 : i)}
+              />
+            ))}
+          </div>
+        </Reveal>
       </div>
     </section>
   );
