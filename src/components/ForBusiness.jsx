@@ -47,6 +47,7 @@ const ForBusiness = () => {
             <a
               href={DASHBOARD_LINKS.business}
               className="inline-flex items-center gap-2 px-6 py-3.5 rounded-pill bg-primary text-white font-semibold text-[15px] hover:bg-primaryDark shadow-soft transition-colors"
+            target="_blank"
             >
               Go to business dashboard
               <span aria-hidden>→</span>
@@ -81,7 +82,8 @@ const ForBusiness = () => {
             <a
               href={DASHBOARD_LINKS.admin}
               className="inline-flex items-center gap-2 px-6 py-3.5 rounded-pill bg-white text-secondary font-semibold text-[15px] hover:bg-primaryLight transition-colors"
-            >
+              target="_blank"
+          >
               Go to admin dashboard
               <span aria-hidden>→</span>
             </a>

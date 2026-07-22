@@ -29,13 +29,15 @@ const Hero = () => {
             <a
               href={DASHBOARD_LINKS.business}
               className="px-7 py-3.5 rounded-pill bg-primary text-white font-semibold text-[15px] shadow-soft hover:bg-primaryDark transition-colors"
-            >
+           target="_blank"
+           >
               Open business dashboard
             </a>
             <a
               href={DASHBOARD_LINKS.admin}
               className="px-7 py-3.5 rounded-pill border border-line text-ink font-semibold text-[15px] hover:border-primary hover:text-primary transition-colors"
-            >
+           target="_blank"
+           >
               Open admin dashboard
             </a>
           </div>

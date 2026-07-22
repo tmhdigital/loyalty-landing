@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import logo from "../assets/logo.png";
 import { DASHBOARD_LINKS } from "../config";
 
 const NAV_LINKS = [
-  { label: "Features", href: "#features" },
-  { label: "How it works", href: "#how-it-works" },
-  { label: "For business", href: "#for-business" },
-  { label: "FAQ", href: "#faq" },
+  { label: "Features", href: "/#features" },
+  { label: "How it works", href: "/#how-it-works" },
+  { label: "For business", href: "/#for-business" },
+  { label: "FAQ", href: "/#faq" },
 ];
 
 const Navbar = () => {
@@ -26,9 +27,9 @@ const Navbar = () => {
       }`}
     >
       <nav className="max-w-7xl mx-auto flex items-center justify-between px-6 lg:px-10 h-20">
-        <a href="#top" className="flex items-center gap-2 shrink-0">
+        <Link to="/" className="flex items-center gap-2 shrink-0">
           <img src={logo} alt="Rewaldo" className="h-9 w-auto" />
-        </a>
+        </Link>
 
         <div className="hidden lg:flex items-center gap-9">
           {NAV_LINKS.map((link) => (
@@ -92,13 +93,15 @@ const Navbar = () => {
             <a
               href={DASHBOARD_LINKS.admin}
               className="w-full text-center px-5 py-3 rounded-pill text-[14px] font-semibold text-ink border border-line"
-            >
+           target="_blank"
+           >
               Admin login
             </a>
             <a
               href={DASHBOARD_LINKS.business}
               className="w-full text-center px-5 py-3 rounded-pill text-[14px] font-semibold text-white bg-primary"
-            >
+           
+           target="_blank">
               Business login
             </a>
           </div>

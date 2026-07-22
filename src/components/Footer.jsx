@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import logo from "../assets/logo.png";
 import { DASHBOARD_LINKS } from "../config";
 
@@ -25,8 +26,8 @@ const Footer = () => {
         <div>
           <p className="font-semibold text-ink text-[14px] mb-4">Dashboards</p>
           <ul className="space-y-3 text-[14px] text-muted">
-            <li><a href={DASHBOARD_LINKS.business} className="hover:text-primary">Business dashboard</a></li>
-            <li><a href={DASHBOARD_LINKS.admin} className="hover:text-primary">Admin dashboard</a></li>
+            <li><a target="_blank" href={DASHBOARD_LINKS.business} className="hover:text-primary">Business dashboard</a></li>
+            <li><a target="_blank" href={DASHBOARD_LINKS.admin} className="hover:text-primary">Admin dashboard</a></li>
           </ul>
         </div>
 
@@ -34,7 +35,7 @@ const Footer = () => {
           <p className="font-semibold text-ink text-[14px] mb-4">Company</p>
           <ul className="space-y-3 text-[14px] text-muted">
             <li><a href="#" className="hover:text-primary">Contact us</a></li>
-            <li><a href="#" className="hover:text-primary">Privacy policy</a></li>
+            <li><Link to="/privacy-policy" className="hover:text-primary">Privacy policy</Link></li>
             <li><a href="#" className="hover:text-primary">Terms of service</a></li>
           </ul>
         </div>
@@ -45,7 +46,7 @@ const Footer = () => {
           <p className="text-[13px] text-muted">
             © {new Date().getFullYear()} Rewaldo. All rights reserved.
           </p>
-          <p className="text-[13px] text-muted">Powered by MLITech</p>
+          <p className="text-[13px] text-muted">Powered by TMH Digital</p>
         </div>
       </div>
     </footer>

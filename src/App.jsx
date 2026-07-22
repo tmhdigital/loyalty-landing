@@ -1,23 +1,30 @@
+import { useEffect } from "react";
+import { Routes, Route, useLocation } from "react-router-dom";
 import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-import Features from "./components/Features";
-import HowItWorks from "./components/HowItWorks";
-import ForBusiness from "./components/ForBusiness";
-import FAQ from "./components/FAQ";
-import CTABanner from "./components/CTABanner";
 import Footer from "./components/Footer";
+import Home from "./pages/Home";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+
+const ScrollToTop = () => {
+  const { pathname, hash } = useLocation();
+
+  useEffect(() => {
+    if (!hash) window.scrollTo(0, 0);
+  }, [pathname, hash]);
+
+  return null;
+};
 
 function App() {
   return (
     <div className="bg-white">
+      <ScrollToTop />
       <Navbar />
       <main>
-        <Hero />
-        <Features />
-        <HowItWorks />
-        <ForBusiness />
-        <FAQ />
-        <CTABanner />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        </Routes>
       </main>
       <Footer />
     </div>

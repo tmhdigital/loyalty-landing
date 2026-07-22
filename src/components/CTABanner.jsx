@@ -17,12 +17,14 @@ const CTABanner = () => {
           <a
             href={DASHBOARD_LINKS.business}
             className="px-7 py-3.5 rounded-pill bg-primary text-white font-semibold text-[15px] hover:bg-primaryDark shadow-soft transition-colors"
+          target="_blank"
           >
             Business dashboard
           </a>
           <a
             href={DASHBOARD_LINKS.admin}
             className="px-7 py-3.5 rounded-pill bg-white text-secondary font-semibold text-[15px] hover:bg-primaryLight transition-colors"
+            target="_blank"
           >
             Admin dashboard
           </a>
