@@ -67,7 +67,7 @@ const Footer = () => {
             © {new Date().getFullYear()} Rewaldo. All rights reserved.
           </p>
           <div className="flex items-center gap-4">
-            <p className="text-[13px] text-muted">Powered by TMH Digital</p>
+            <p className="text-[13px] text-muted">Powered by <a href="https://solexes.com" target="_blank" rel="noopener noreferrer" className="hover:text-primary">Solexes (Private) Limited</a></p>
             <span className="text-line">|</span>
             {isAdmin ? (
               <button
