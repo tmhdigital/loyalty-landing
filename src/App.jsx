@@ -4,6 +4,8 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
+import ManualPage from "./pages/ManualPage";
+import { AdminAuthProvider } from "./context/AdminAuthContext";
 
 const ScrollToTop = () => {
   const { pathname, hash } = useLocation();
@@ -17,17 +19,20 @@ const ScrollToTop = () => {
 
 function App() {
   return (
-    <div className="bg-white">
-      <ScrollToTop />
-      <Navbar />
-      <main>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-        </Routes>
-      </main>
-      <Footer />
-    </div>
+    <AdminAuthProvider>
+      <div className="bg-white">
+        <ScrollToTop />
+        <Navbar />
+        <main>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="/manuals/:slug" element={<ManualPage />} />
+          </Routes>
+        </main>
+        <Footer />
+      </div>
+    </AdminAuthProvider>
   );
 }
 

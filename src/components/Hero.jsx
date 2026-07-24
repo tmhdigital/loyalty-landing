@@ -36,16 +36,7 @@ const Hero = () => {
               >
                 Open business dashboard
               </a>
-              <a
-                href={DASHBOARD_LINKS.admin}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-7 py-3.5 rounded-pill border border-line text-ink font-semibold text-[15px] hover:border-primary hover:text-primary transition-colors"
-              >
-                Open admin dashboard
-              </a>
             </div>
-
             <div className="mt-12 flex items-center gap-8 flex-wrap">
               <div>
                 <p className="text-2xl font-bold text-secondary">1</p>

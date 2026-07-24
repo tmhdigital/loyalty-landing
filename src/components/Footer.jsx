@@ -1,11 +1,17 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../assets/logo.png";
 import { DASHBOARD_LINKS } from "../config";
+import { useAdminAuth } from "../context/AdminAuthContext";
+import AdminLoginModal from "./AdminLoginModal";
 
 const Footer = () => {
+  const { isAdmin, logout } = useAdminAuth();
+  const [loginOpen, setLoginOpen] = useState(false);
+
   return (
     <footer className="border-t border-line">
-      <div className="max-w-7xl mx-auto px-6 lg:px-10 py-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+      <div className="max-w-7xl mx-auto px-6 lg:px-10 py-14 grid sm:grid-cols-2 lg:grid-cols-5 gap-10">
         <div>
           <img src={logo} alt="Rewaldo" className="h-8 w-auto mb-4" />
           <p className="text-muted text-[14px] leading-relaxed max-w-xs">
@@ -34,6 +40,18 @@ const Footer = () => {
         </div>
 
         <div>
+          <p className="font-semibold text-ink text-[14px] mb-4">User manuals</p>
+          <ul className="space-y-3 text-[14px] text-muted">
+            <li><Link to="/manuals/customer-app" className="hover:text-primary">Customer app</Link></li>
+            <li><Link to="/manuals/business-app" className="hover:text-primary">Business app</Link></li>
+            <li><Link to="/manuals/business-dashboard" className="hover:text-primary">Business dashboard</Link></li>
+            {isAdmin && (
+              <li><Link to="/manuals/admin-dashboard" className="hover:text-primary">Admin dashboard</Link></li>
+            )}
+          </ul>
+        </div>
+
+        <div>
           <p className="font-semibold text-ink text-[14px] mb-4">Company</p>
           <ul className="space-y-3 text-[14px] text-muted">
             <li><a href="#" className="hover:text-primary">Contact us</a></li>
@@ -48,9 +66,31 @@ const Footer = () => {
           <p className="text-[13px] text-muted">
             © {new Date().getFullYear()} Rewaldo. All rights reserved.
           </p>
-          <p className="text-[13px] text-muted">Powered by TMH Digital</p>
+          <div className="flex items-center gap-4">
+            <p className="text-[13px] text-muted">Powered by TMH Digital</p>
+            <span className="text-line">|</span>
+            {isAdmin ? (
+              <button
+                type="button"
+                onClick={logout}
+                className="text-[13px] text-muted hover:text-primary"
+              >
+                Admin logout
+              </button>
+            ) : (
+              <button
+                type="button"
+                onClick={() => setLoginOpen(true)}
+                className="text-[13px] text-muted hover:text-primary"
+              >
+                Admin login
+              </button>
+            )}
+          </div>
         </div>
       </div>
+
+      <AdminLoginModal open={loginOpen} onClose={() => setLoginOpen(false)} />
     </footer>
   );
 };

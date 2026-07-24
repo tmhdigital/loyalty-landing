@@ -1,3 +1,5 @@
+import DocsPage from "../components/docs/DocsPage";
+
 const SECTIONS = [
   {
     title: "Introduction",
@@ -313,117 +315,14 @@ const SECTIONS = [
   },
 ];
 
-const slugify = (title) =>
-  title
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/(^-|-$)/g, "");
-
-const Block = ({ block }) => {
-  switch (block.type) {
-    case "h3":
-      return (
-        <h3 className="font-semibold text-ink text-[16px] mt-6 mb-2">
-          {block.text}
-        </h3>
-      );
-    case "strong":
-      return (
-        <p className="font-semibold text-ink text-[15px] leading-relaxed mb-4">
-          {block.text}
-        </p>
-      );
-    case "ul":
-      return (
-        <ul className="mb-4 space-y-2">
-          {block.items.map((item) => (
-            <li
-              key={item}
-              className="flex gap-3 text-muted text-[15px] leading-relaxed"
-            >
-              <span className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
-              <span>{item}</span>
-            </li>
-          ))}
-        </ul>
-      );
-    case "card":
-      return (
-        <div className="mb-4 rounded-2xl border border-line bg-[#FAFBFA] p-6">
-          {block.lines.map((line) => (
-            <p key={line} className="text-ink text-[15px] leading-relaxed">
-              {line}
-            </p>
-          ))}
-        </div>
-      );
-    case "p":
-    default:
-      return (
-        <p className="text-muted text-[15px] leading-relaxed mb-4">
-          {block.text}
-        </p>
-      );
-  }
-};
-
 const PrivacyPolicy = () => {
   return (
-    <section className="pt-36 pb-24 bg-white">
-      <div className="max-w-5xl mx-auto px-6 lg:px-10">
-        <div className="max-w-2xl mb-12">
-          <p className="text-primary font-semibold text-sm tracking-wide uppercase mb-3">
-            Legal
-          </p>
-          <h1 className="text-[32px] sm:text-[40px] font-bold text-secondary leading-tight">
-            Privacy Policy
-          </h1>
-          <p className="mt-4 text-muted text-[16px] leading-relaxed">
-            Privacy Policy for the Rewaldo Customer and Merchant Applications,
-            operated by TMH Digital (SMC-Private) Limited.
-          </p>
-        </div>
-
-        <div className="grid lg:grid-cols-[240px_1fr] gap-12">
-          <nav className="hidden lg:block">
-            <div className="sticky top-28">
-              <p className="font-semibold text-ink text-[13px] uppercase tracking-wide mb-4">
-                On this page
-              </p>
-              <ul className="space-y-2.5 max-h-[70vh] overflow-y-auto pr-2">
-                {SECTIONS.map((section, i) => (
-                  <li key={section.title}>
-                    <a
-                      href={`#${slugify(section.title)}`}
-                      className="text-[13.5px] text-muted hover:text-primary transition-colors"
-                    >
-                      {i + 1}. {section.title}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </nav>
-
-          <div className="min-w-0">
-            {SECTIONS.map((section, i) => (
-              <section
-                key={section.title}
-                id={slugify(section.title)}
-                className="scroll-mt-28 pb-10 mb-10 border-b border-line last:border-b-0 last:mb-0 last:pb-0"
-              >
-                <h2 className="text-[20px] sm:text-[22px] font-bold text-secondary mb-4">
-                  {i + 1}. {section.title}
-                </h2>
-                {section.blocks.map((block, j) => (
-                  <Block key={j} block={block} />
-                ))}
-              </section>
-            ))}
-          </div>
-        </div>
-      </div>
-    </section>
+    <DocsPage
+      eyebrow="Legal"
+      title="Privacy Policy"
+      description="Privacy Policy for the Rewaldo Customer and Merchant Applications, operated by TMH Digital (SMC-Private) Limited."
+      sections={SECTIONS}
+    />
   );
 };
 
