@@ -54,7 +54,7 @@ const AdminLoginModal = ({ open, onClose }) => {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               className="w-full rounded-xl border border-line px-4 py-2.5 text-[14px] text-ink focus:outline-none focus:border-primary"
-              placeholder="abc@xyz.com"
+              placeholder="example@gmail.com"
             />
           </div>
 
