@@ -8,6 +8,7 @@ import {
   WalletIcon,
   TierIcon,
   MapPinIcon,
+  TagIcon,
   GiftIcon,
   ShieldIcon,
   StorefrontIcon,
@@ -15,25 +16,68 @@ import {
   MegaphoneIcon,
   UsersIcon,
   AnalyticsIcon,
+  StarIcon,
+  HeartIcon,
+  HandshakeIcon,
+  PieChartIcon,
+  BellIcon,
+  ShoppingBagIcon,
+  UserPlusIcon,
 } from "./icons";
 
 const CUSTOMER_FEATURES = [
   { icon: StorefrontIcon, label: "Hundreds of partner merchants" },
   { icon: WalletIcon, label: "One digital loyalty wallet" },
   { icon: TierIcon, label: "Tier-based rewards" },
-  { icon: MapPinIcon, label: "Nearby offers, Google Maps built in" },
+  { icon: StarIcon, label: "Instant loyalty points" },
+  { icon: HeartIcon, label: "Favourite merchants" },
+  { icon: MapPinIcon, label: "Google Maps integration" },
+  { icon: TagIcon, label: "Nearby offers" },
   { icon: GiftIcon, label: "Cash point redemption" },
   { icon: ShieldIcon, label: "Secure digital experience" },
 ];
 
 const BUSINESS_FEATURES = [
-  { icon: StorefrontIcon, label: "Free merchant onboarding" },
+  { icon: HandshakeIcon, label: "Free merchant onboarding" },
+  { icon: StorefrontIcon, label: "Digital business profile" },
   { icon: CatalogueIcon, label: "Product & service catalogue" },
   { icon: MegaphoneIcon, label: "Targeted marketing campaigns" },
   { icon: UsersIcon, label: "Customer segmentation" },
+  { icon: TierIcon, label: "Loyalty & tier management" },
   { icon: GiftIcon, label: "Digital rewards engine" },
   { icon: AnalyticsIcon, label: "Revenue & profit dashboards" },
+  { icon: PieChartIcon, label: "Business analytics & reporting" },
 ];
+
+const WEEKLY_SELL = [
+  { day: "Sat", value: 8, color: "#6366F1" },
+  { day: "Sun", value: 6, color: "#34D399" },
+  { day: "Mon", value: 5, color: "#F59E0B" },
+  { day: "Tue", value: 7, color: "#22D3EE" },
+  { day: "Wed", value: 4, color: "#A78BFA" },
+  { day: "Thu", value: 6, color: "#3B82F6" },
+  { day: "Fri", value: 3, color: "#F87171" },
+];
+
+const WEEKLY_SELL_TOTAL = WEEKLY_SELL.reduce((sum, d) => sum + d.value, 0);
+
+const STAT_CARDS = [
+  { icon: ShoppingBagIcon, label: "Total Sales", value: "84,320.00" },
+  { icon: UserPlusIcon, label: "New Members", value: "58" },
+  { icon: StarIcon, label: "Points Issued", value: "12,450" },
+  { icon: GiftIcon, label: "Points Redeemed", value: "4,820" },
+];
+
+const WEEKLY_SELL_GRADIENT = (() => {
+  let acc = 0;
+  const stops = WEEKLY_SELL.map(({ value, color }) => {
+    const start = (acc / WEEKLY_SELL_TOTAL) * 360;
+    acc += value;
+    const end = (acc / WEEKLY_SELL_TOTAL) * 360;
+    return `${color} ${start}deg ${end}deg`;
+  });
+  return `conic-gradient(${stops.join(", ")})`;
+})();
 
 const StatusRow = () => (
   <div className="flex items-center justify-between px-5 pt-3 pb-1 text-[11px] font-semibold text-ink/70">
@@ -128,56 +172,77 @@ const CustomerAppScreen = () => (
 const BusinessAppScreen = () => (
   <PhoneMockup>
     <StatusRow />
-    <div className="px-5 pt-3 pb-4">
-      <p className="text-[15px] font-semibold text-ink">Welcome back,</p>
-      <p className="text-[11.5px] text-muted">Merchant Partner!</p>
-    </div>
-
-    <div className="mx-5 rounded-2xl bg-secondary p-4 text-white">
-      <p className="text-[10.5px] uppercase tracking-wide text-white/60">Total revenue</p>
-      <div className="flex items-end justify-between mt-1">
-        <p className="text-[19px] font-bold leading-tight">PKR 1,248,750</p>
-        <span className="text-[10.5px] font-semibold bg-primary/20 text-primary px-2 py-0.5 rounded-pill">
-          +18.6%
-        </span>
+    <div className="px-5 pt-1 pb-3 flex items-center justify-between">
+      <div className="flex items-center gap-2.5">
+        <img
+          src={businessIcon}
+          alt=""
+          className="w-9 h-9 rounded-full object-cover shrink-0"
+        />
+        <div>
+          <p className="text-[13px] font-bold text-ink leading-tight">Merchant Partner</p>
+          <p className="text-[9.5px] text-muted leading-tight">Lahore, Pakistan</p>
+        </div>
       </div>
-      <p className="text-[10px] text-white/50 mt-0.5">vs last 30 days</p>
+      <span className="relative w-7 h-7 rounded-full border border-line flex items-center justify-center text-ink/70 [&_svg]:w-4 [&_svg]:h-4">
+        <BellIcon />
+        <span className="absolute -top-0.5 -right-0.5 w-3 h-3 rounded-full bg-primary text-white text-[7px] font-bold flex items-center justify-center">
+          1
+        </span>
+      </span>
     </div>
 
-    <div className="px-5 mt-4 grid grid-cols-2 gap-2.5">
-      {[
-        ["Total customers", "4,850", "+12.4%"],
-        ["Repeat customers", "2,160", "+15.7%"],
-        ["Total orders", "6,320", "+10.3%"],
-        ["Points redeemed", "285,600", "+19.8%"],
-      ].map(([label, value, delta]) => (
-        <div key={label} className="rounded-xl border border-line px-3 py-2.5">
-          <p className="text-[9.5px] text-muted leading-tight">{label}</p>
-          <p className="text-[13.5px] font-bold text-ink leading-tight mt-0.5">{value}</p>
-          <p className="text-[9.5px] font-semibold text-primary">{delta}</p>
+    <div className="px-5 flex items-center justify-between">
+      <p className="text-[19px] font-bold text-ink">Statistics</p>
+      <span className="text-[10px] font-medium text-ink border border-line rounded-pill px-3 py-1.5">
+        All Time ⌄
+      </span>
+    </div>
+    <p className="px-5 mt-1 text-[10.5px] text-muted">Range: All Time</p>
+
+    <div className="px-5 mt-3 grid grid-cols-2 gap-2.5">
+      {STAT_CARDS.map(({ icon: Icon, label, value }) => (
+        <div
+          key={label}
+          className="rounded-2xl border border-primary/50 px-3.5 py-2.5 text-ink/70 [&_svg]:w-[18px] [&_svg]:h-[18px]"
+        >
+          <p className="text-[10px] text-muted leading-tight mb-2">{label}</p>
+          <div className="flex items-center gap-1.5">
+            <Icon />
+            <span className="text-[13.5px] font-bold text-ink leading-tight">{value}</span>
+          </div>
         </div>
       ))}
     </div>
 
     <div className="px-5 mt-4">
-      <p className="text-[12.5px] font-semibold text-ink mb-2.5">Recent campaigns</p>
-      <div className="space-y-2">
-        <div className="flex items-center justify-between px-3 py-2 rounded-xl bg-[#FAFBFA] border border-line">
-          <span className="text-[11.5px] font-medium text-ink">Weekend Offer · 20% off</span>
-          <span className="text-[9.5px] font-semibold text-primary bg-primaryLight px-2 py-0.5 rounded-pill">
-            Active
-          </span>
+      <div className="rounded-2xl bg-primaryLight p-4">
+        <p className="text-[13px] font-bold text-ink mb-2.5">Weekly Sell</p>
+        <div className="relative h-[3px] rounded-full bg-white/70 mb-3">
+          <div className="absolute left-0 top-0 h-full w-1/6 rounded-full bg-primary" />
         </div>
-        <div className="flex items-center justify-between px-3 py-2 rounded-xl bg-[#FAFBFA] border border-line">
-          <span className="text-[11.5px] font-medium text-ink">VIP Special</span>
-          <span className="text-[9.5px] font-semibold text-muted bg-line px-2 py-0.5 rounded-pill">
-            Completed
-          </span>
+        <div className="flex items-center gap-4">
+          <div
+            className="relative w-[72px] h-[72px] shrink-0 rounded-full"
+            style={{ background: WEEKLY_SELL_GRADIENT }}
+          >
+            <div className="absolute inset-[9px] rounded-full bg-white flex items-center justify-center">
+              <span className="text-[13px] font-bold text-ink">{WEEKLY_SELL_TOTAL}</span>
+            </div>
+          </div>
+          <div className="grid grid-cols-2 gap-x-3 gap-y-1.5">
+            {WEEKLY_SELL.map(({ day, color }) => (
+              <div key={day} className="flex items-center gap-1.5">
+                <span className="w-2 h-2 rounded-full shrink-0" style={{ background: color }} />
+                <span className="text-[10px] text-ink/70">{day}</span>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>
 
-    <BottomNav items={["Home", "Customers", "Campaigns", "Rewards", "More"]} active="Home" />
+    <BottomNav items={["Home", "Sales", "Customers", "Profile"]} active="Home" />
   </PhoneMockup>
 );
 

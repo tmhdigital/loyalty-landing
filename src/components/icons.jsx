@@ -124,6 +124,55 @@ export const CatalogueIcon = () => (
   </svg>
 );
 
+export const UserPlusIcon = () => (
+  <svg viewBox="0 0 24 24" fill="none" className={base}>
+    <circle cx="9" cy="8" r="3.2" stroke="currentColor" strokeWidth="1.6" />
+    <path d="M3 19c0-3.2 2.7-5.3 6-5.3s6 2.1 6 5.3" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+    <path d="M18.5 7.5v5M16 10h5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+  </svg>
+);
+
+export const SearchIcon = () => (
+  <svg viewBox="0 0 24 24" fill="none" className={base}>
+    <circle cx="10.5" cy="10.5" r="6.5" stroke="currentColor" strokeWidth="1.6" />
+    <path d="M15.3 15.3L20 20" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+  </svg>
+);
+
+export const ShoppingBagIcon = () => (
+  <svg viewBox="0 0 24 24" fill="none" className={base}>
+    <path d="M6.5 8.5h11l1 11a1.5 1.5 0 01-1.5 1.5h-10a1.5 1.5 0 01-1.5-1.5l1-11z" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round" />
+    <path d="M9 8.5V6.8a3 3 0 016 0v1.7" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+  </svg>
+);
+
+export const StarIcon = () => (
+  <svg viewBox="0 0 24 24" fill="none" className={base}>
+    <path d="M12 3.5l2.4 5 5.4.7-4 3.8.9 5.5L12 15.9l-4.7 2.6.9-5.5-4-3.8 5.4-.7L12 3.5z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
+  </svg>
+);
+
+export const HeartIcon = () => (
+  <svg viewBox="0 0 24 24" fill="none" className={base}>
+    <path d="M12 20s-7.5-4.6-9.4-9.3C1.4 7.6 3 4.5 6.2 4a4.6 4.6 0 015.8 2.4A4.6 4.6 0 0117.8 4c3.2.5 4.8 3.6 3.6 6.7C19.5 15.4 12 20 12 20z" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round" />
+  </svg>
+);
+
+export const HandshakeIcon = () => (
+  <svg viewBox="0 0 24 24" fill="none" className={base}>
+    <path d="M3 11l3.5-3 2.7 1.8h3.6L15.5 8 21 11" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+    <path d="M6.5 8.8l5.3 5.2a1.4 1.4 0 002-2l-3-3M15.5 8.8l-4 4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+    <path d="M3 11v6.5h3.2M21 11v6.5h-3.2" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round" />
+  </svg>
+);
+
+export const PieChartIcon = () => (
+  <svg viewBox="0 0 24 24" fill="none" className={base}>
+    <circle cx="12" cy="12" r="8.5" stroke="currentColor" strokeWidth="1.6" />
+    <path d="M12 3.5V12h8.5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+  </svg>
+);
+
 export const GooglePlayIcon = () => (
   <svg viewBox="0 0 24 24" className="w-5 h-5">
     <path d="M4.7 2.6a1.4 1.4 0 00-.7 1.2v16.4c0 .5.3 1 .7 1.2l9.7-9.4-9.7-9.4z" fill="#00D2FF" />
