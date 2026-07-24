@@ -36,7 +36,7 @@ const BenefitList = ({ items, dark }) => (
 
 const Benefits = () => {
   return (
-    <section id="benefits" className="py-24 lg:py-32 bg-white">
+    <section id="benefits" className="py-16 lg:py-20 bg-white">
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         <Reveal>
           <div className="max-w-2xl mb-16">

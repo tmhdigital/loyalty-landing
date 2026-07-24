@@ -50,7 +50,7 @@ const FAQ = () => {
   const [openIndex, setOpenIndex] = useState(0);
 
   return (
-    <section id="faq" className="py-24 lg:py-32 bg-[#FAFBFA]">
+    <section id="faq" className="py-16 lg:py-20 bg-[#FAFBFA]">
       <div className="max-w-4xl mx-auto px-6 lg:px-10">
         <Reveal>
           <div className="mb-12">

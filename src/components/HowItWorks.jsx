@@ -65,7 +65,7 @@ const StepList = ({ steps }) => (
 
 const HowItWorks = () => {
   return (
-    <section id="how-it-works" className="py-24 lg:py-32 bg-[#FAFBFA]">
+    <section id="how-it-works" className="py-16 lg:py-20 bg-[#FAFBFA]">
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         <Reveal>
           <div className="max-w-2xl mb-16">

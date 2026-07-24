@@ -4,7 +4,7 @@ import Reveal from "./Reveal";
 
 const ForBusiness = () => {
   return (
-    <section id="for-business" className="py-24 lg:py-32 bg-white">
+    <section id="for-business" className="py-16 lg:py-20 bg-white">
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         <Reveal>
           <div className="max-w-2xl mb-16">
