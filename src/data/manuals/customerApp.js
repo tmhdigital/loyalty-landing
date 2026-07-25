@@ -35,6 +35,7 @@ const manual = {
           items: [
             "Sign Up — create a new account using your name, email/phone number, and a password. Password should contain 8 digits with special characters",
             "Sign Up with a Referral ID — if a friend invited you, enter their referral code during sign-up to link your account to them and unlock referral rewards for both of you.",
+            "You will receive a OTP (One Time Password) on your registered email/phone number to verify your account. Enter the OTP on the Verify OTP screen to complete the sign-up process.",
           ],
         },
         { type: "h3", text: "Signing In" },
@@ -77,7 +78,7 @@ const manual = {
             ["Home", "Dashboard with nearby merchants, service categories, and active promotions."],
             ["Merchants", "Search and browse all participating merchants and stores."],
             ["Wallet", "Your gift cards, points balance, vouchers, and transaction history."],
-            ["Profile", "Account details, settings, referrals, subscription, and support."],
+            ["Profile", "Password, My Membership, Transaction History, Refer Friends, Appearance, Notifications, Contact Us, Terms and Conditions, Privacy Policy, Submit App Feedback and Delete Account."],
           ],
         },
       ],
@@ -97,7 +98,7 @@ const manual = {
         { type: "h3", text: "Service Categories" },
         {
           type: "p",
-          text: "Merchants are organised into categories so you can quickly find the type of business you're looking for:",
+          text: "Merchant's Promotions are organised into categories so you can quickly find the type of business you're looking for:",
         },
         {
           type: "table",
@@ -118,7 +119,7 @@ const manual = {
           ],
         },
         { type: "p", text: "Tap a category to see all merchants offering that type of service." },
-        { type: "h3", text: "Promotions & Rewards Carousel" },
+        { type: "h3", text: "Special Promotions Carousel" },
         {
           type: "p",
           text: "An auto-scrolling carousel highlights active promotions and rewards from merchants you follow or that are near you. Tap any card to view the full offer details. It also shows the applied promos carousel at the bottom of screen.",
@@ -156,7 +157,7 @@ const manual = {
         { type: "h3", text: "Points Balance" },
         {
           type: "p",
-          text: "Your current point balance is shown at the top of the Wallet screen, reflecting points earned from purchases and adjusted for any points already redeemed.",
+          text: "Your current point balance by Merchant is shown at the top of respective Merchants Wallet screen, reflecting points earned from purchases and adjusted for any points already redeemed.",
         },
         { type: "h3", text: "Gift Cards" },
         { type: "p", text: "The Gift Card list shows all gift cards issued to you. Each card is labelled as:" },
@@ -168,11 +169,6 @@ const manual = {
           ],
         },
         { type: "p", text: "Use the search bar on the gift card list to quickly find a specific card." },
-        { type: "h3", text: "Vouchers" },
-        {
-          type: "p",
-          text: "Vouchers issued by merchants (discounts, free items, etc.) are listed separately and can be viewed and redeemed at the merchant's point of sale.",
-        },
         { type: "h3", text: "Transaction History" },
         {
           type: "p",
@@ -191,7 +187,7 @@ const manual = {
           type: "ol",
           items: [
             "From the Wallet or the merchant's checkout (New Sale) flow, choose Redeem Points.",
-            "Enter the number of points you want to redeem.",
+            "Advise the Merchant the number of points you want to redeem.",
             "Confirm the Redemption Request that comes on your customer app. The request is sent in real time from the merchant's point-of-sale device for approval.",
             "Once the merchant confirms the transaction, your points balance and gift card wallet update automatically.",
           ],
@@ -203,11 +199,11 @@ const manual = {
       ],
     },
     {
-      title: "Promotions & Rewards",
+      title: "Special Promotions",
       blocks: [
         {
           type: "p",
-          text: "The Promo & Rewards screen lists every active promotion available to you, sorted by relevance and merchant. Recently viewed promotions are saved so you can quickly return to an offer you were considering.",
+          text: "The Special Promotions screen lists every active promotion available to you, sorted by relevance and merchant. Recently viewed promotions are saved so you can quickly return to an offer you were considering.",
         },
       ],
     },
@@ -221,6 +217,7 @@ const manual = {
             "Open Profile and select Refer a Friend.",
             "Share your personal referral link or code with a friend.",
             "Your friend enters your referral ID when they sign up (Sign Up with Referral ID).",
+            "Once your friend purchases a paid membership you will receive your referral cash reward, that can be used to renew your next membership.",
             "Track everyone you've invited on the Referred Friends list.",
           ],
         },
@@ -249,7 +246,7 @@ const manual = {
         { type: "p", text: "Go to Profile → Change Password, enter your current password, and set a new one." },
         { type: "h3", text: "Preferences" },
         { type: "p", text: "Set your preferred categories and communication preferences from the Preferences screen." },
-        { type: "h3", text: "Subscription" },
+        { type: "h3", text: "Membership" },
         {
           type: "p",
           text: "If your loyalty program includes a paid membership tier, the membership screen lets you view plan details and complete checkout for an upgraded membership. My Membership shows your current active plan.",

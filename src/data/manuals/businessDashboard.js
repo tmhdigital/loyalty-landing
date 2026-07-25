@@ -11,7 +11,7 @@ const manual = {
       blocks: [
         {
           type: "p",
-          text: "The Rewaldo Business Dashboard is the web portal for merchant business owners to run their own loyalty program day to day: recording sales, managing staff accounts, building promotional campaigns, tracking customer activity, and reviewing performance reports — all from a browser, alongside the Business mobile app used at the counter.",
+          text: "The Rewaldo Business Dashboard is the web portal for merchant business owners to run their own loyalty program through points and tier systems: recording sales, managing staff accounts, building promotional campaigns, tracking customer activity, and reviewing performance reports — all from a browser, alongside the Business mobile app used at the counter.",
         },
         {
           type: "note",
@@ -26,7 +26,7 @@ const manual = {
         {
           type: "ol",
           items: [
-            "Open the Business Dashboard sign-up page and select Sign Up.",
+            "Open the Business Dashboard sign-up page and select Sign Up (this can alternatively be done from the merchant app).",
             "Enter your business contact details and create a password.",
             "Verify your account with the OTP sent to your email/phone (OTP Verification).",
           ],
@@ -34,7 +34,7 @@ const manual = {
         { type: "h3", text: "Setting Up Shop Info" },
         {
           type: "p",
-          text: "Complete your Shop Info profile — business name, category, logo, and description — so customers can recognise your store in the customer app.",
+          text: "Complete your Shop Info in settings profile —> business name, Service category, Website Url, Digital Card logo and Cover Photo, and Company Information — so customers can recognise your store in the customer app.",
         },
         { type: "h3", text: "Signing In" },
         {
@@ -53,46 +53,64 @@ const manual = {
             "Set a new password on the Set Password screen (a Reset Success confirmation will appear).",
           ],
         },
-        { type: "h3", text: "Subscription & Billing" },
-        {
-          type: "p",
-          text: "If your plan requires payment, checkout is handled securely and you'll land on a Success or Failed confirmation page depending on the payment outcome. If a payment fails, you can retry from your account settings.",
-        },
       ],
     },
     {
       title: "Dashboard Home",
       blocks: [
+        { type: "p", text: "The Home screen summarises your business's loyalty performance for: " },
         {
-          type: "p",
-          text: "The Home screen summarises your business's loyalty performance — sales, points issued, points redeemed, and new customer growth — giving you the same at-a-glance view available on the Business mobile app, now on a full desktop screen for deeper review.",
+          type: "ol",
+          items: [
+            "Weeklly performance by Date Chart",
+            'Customer Chart by Month and Year for Revenue and Discount.',
+            "Statistics for Total Sales, Total Memebers added, Total point issued and Rewards Redeemed for today, past week, past month and all time.",
+            "Data for Recently added Members.",
+          ],
         },
       ],
     },
     {
       title: "Sell Management",
       blocks: [
-        { type: "p", text: "Sell Management is where sales are recorded and reviewed from the web dashboard:" },
+        {
+          type: "p",
+          text: "Use New Transaction at the point of sale to award points and apply rewards for a customer purchase:",
+        },
         {
           type: "ol",
           items: [
-            "Open Sell Management and select New Sell to record a sale.",
-            'Scan a barcode using "Ready to scan barcode..." or enter sale details manually.',
-            "Filter the sales list by Merchants or by All Months to review historical activity.",
+            "Tap New Transaction from the home screen.",
+            "Find the customer by entering their loyalty Card ID (e.g. XY9OWARA) and tapping Find, or by scanning their card/QR code.",
+            "Enter the bill amount for the purchase.",
+            "If the customer has an available gift card or wants to redeem points, apply it: enter the points to redeem and tap Apply Calculation. The screen will show Available Points, Gift Card Available, and the Gross Value of Promotions applied.",
+            "The Merchant can also apply a promotion saved by the customer.",
+            "Review the calculated Point Redeemed value and the adjusted total and Submit Complete Transaction.",
+            "The Customer will recieve a notification of the points redeemed to approve or decline. ",
+            "Once customer approves, merchant can view the final amount in the summary.",
           ],
         },
         {
           type: "note",
-          text: "For counter transactions with customers present, staff typically use the Business mobile app; Sell Management on the web dashboard is best for reviewing and reconciling sales already recorded.",
+          text: 'If the card code is not recognised, the app shows "Card not found" — double-check the code with the customer or ask them to show the code in their Rewaldo customer app.',
         },
-      ],
-    },
-    {
-      title: "Customer Management",
-      blocks: [
+        { type: "h3", text: "Total Summary & Checkout" },
         {
           type: "p",
-          text: "Customer Management lists everyone enrolled in your store's loyalty program. Open a customer's record to review their tier, points balance, and purchase history — helpful for handling loyalty questions or disputes directly with your customers.",
+          text: "The Total Summary screen displays the Customer Name, Card ID, Total Amount, Point Earned, Point Redeem, and Final Amount for review before completing the sale.",
+        },
+        {
+          type: "ol",
+          items: [
+            "Confirm all details are correct.",
+            "Tap Complete Transaction to finalise the sale.",
+            "The Transaction Status will confirm success.",
+          ],
+        },
+        { type: "h3", text: "Reviewing Sales Data" },
+        {
+          type: "p",
+          text: "Customer details and purchase history can be reviewed using different filters and search options.",
         },
       ],
     },
@@ -107,12 +125,21 @@ const manual = {
         },
         {
           type: "p",
-          text: "Depending on your platform plan, tier thresholds and benefits may be managed centrally by the platform administrator or configurable directly from this screen. An audit trail of tier changes is available so you can see what has changed and when.",
+          text: "Depending on your platform plan, tiers points thresholds and points accumulation rules may be managed centrally by the platform administrator or configurable directly from this screen. An audit trail of tier changes is available so you can see what has changed and when. Customer will be notified of any updates in points and tier system.",
+        },
+      ],
+    },
+        {
+      title: "Customer Management",
+      blocks: [
+        {
+          type: "p",
+          text: "Customer Management lists everyone enrolled in your loyalty program. Open a customer's record to review their tier, points balance, and purchase history — helpful for handling loyalty questions or disputes directly with your customers. Data can be filtered through search criteria and is exportable into an excel file  for further analysis.",
         },
       ],
     },
     {
-      title: "Promotion Management",
+      title: "Promotions and Discounts",
       blocks: [
         { type: "p", text: "Build promotional campaigns to drive repeat visits and reward loyal shoppers:" },
         {
@@ -121,27 +148,23 @@ const manual = {
             "Open Promotion Management and start a new campaign.",
             "Choose a campaign type: Flash Sale, Seasonal, Loyalty, or Referral.",
             "Choose your target audience: All Customers, New Customers, Returning Customers, or Loyal Customers.",
-            "Select Promotion Days to set when the campaign runs.",
+            "Select Promotion by Date range or sepecific days in a week.",
+            "Upload a Cutomized Sale's Pitch or Flyer/Banner to attract customers.",
             "Save the campaign — it will appear on your Campaigns List, where you can track and edit it.",
           ],
         },
-      ],
-    },
-    {
-      title: "User Management",
-      blocks: [
+        { type: "p", text: "Create customizable promotions for customers community:" },
         {
-          type: "p",
-          text: "User Management lets you add and control staff accounts that can access this dashboard on your business's behalf.",
-        },
-        {
-          type: "ul",
+          type: "ol",
           items: [
-            "Add a staff member with their Phone Number and contact details.",
-            "Assign an access level such as Full to control what each staff account can do.",
-            "Review all staff accounts from the Dashboard listing.",
+            "By Map locations.",
+            "For Customers that have Transactioned with the Merchant- under Five selection criterias (All Customers, New Customers, Returning Customers, or Loyal Customers)",
+            "All Customers that have atleast x number of points earned.",
+            "Customers located within a specific radius of the merchant's location.",
+            "Include a Promotion message, upload a Flyer/Banner and send notifications.",
           ],
         },
+
       ],
     },
     {
@@ -156,7 +179,28 @@ const manual = {
           items: [
             "Customer Report — activity and engagement by customer, including Customer Name lookups.",
             "All Metrics filter to review every tracked KPI in one place.",
-            "Choose your preferred visualisation: Bar Chart, Line Chart, Area Chart, or Data Table.",
+            "Choose your preferred visualisation: Bar Chart, Line Chart, Area Chart.",
+            "Data can be extracted by customer by location, by city and membership status.",
+            "Data can be extracted for revenue, visits, points redeemed and points accumulated.",
+            "Data can be exported to Excel for further analysis.",
+          ],
+        },
+      ],
+    },
+    {
+      title: "Settings -> User Management",
+      blocks: [
+        {
+          type: "p",
+          text: "User Management lets you add and control staff accounts that can access this dashboard on your business's behalf.",
+        },
+        {
+          type: "ul",
+          items: [
+            "Add a staff member with their Phone Number and contact details.",
+            "Assign an access level of either Admin or User. Admin can access all features, while User has limited access.",
+            "Review all staff accounts from the Dashboard listing.",
+            "Accounts can be Activated, Deactivated, or deleted at any time.",
           ],
         },
       ],

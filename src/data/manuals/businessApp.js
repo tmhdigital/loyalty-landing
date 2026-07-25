@@ -39,7 +39,7 @@ const manual = {
             "Enter Business Name.",
             "Select Your Service (business category).",
             "Upload Your Company Logo (Take a Photo or Choose from Gallery).",
-            "Enter Website URL (optional).",
+            "Enter your Country.",
             "Write About Us — a short description of your business.",
           ],
         },
@@ -90,7 +90,7 @@ const manual = {
       ],
     },
     {
-      title: "Processing a New Transaction",
+      title: "Sell Management",
       blocks: [
         {
           type: "p",
@@ -103,8 +103,10 @@ const manual = {
             "Find the customer by entering their loyalty Card ID (e.g. XY9OWARA) and tapping Find, or by scanning their card/QR code.",
             "Enter the bill amount for the purchase.",
             "If the customer has an available gift card or wants to redeem points, apply it: enter the points to redeem and tap Apply Calculation. The screen will show Available Points, Gift Card Available, and the Gross Value of Promotions applied.",
-            "Review the calculated Point Redeemed value and the adjusted total.",
-            "Proceed to Total Summary to confirm the transaction.",
+            "The Merchant can also apply a promotion saved by the customer.",
+            "Review the calculated Point Redeemed value and the adjusted total and Submit Complete Transaction.",
+            "The Customer will recieve a notification of the points redeemed to approve or decline. ",
+            "Once customer approves, merchant can view the final amount in the summary.",
           ],
         },
         {
@@ -121,29 +123,13 @@ const manual = {
           items: [
             "Confirm all details are correct.",
             "Tap Complete Transaction to finalise the sale.",
-            "The Transaction Status will confirm success; tap Done to return to the dashboard.",
+            "The Transaction Status will confirm success.",
           ],
         },
-      ],
-    },
-    {
-      title: "Sales Management",
-      blocks: [
+        { type: "h3", text: "Reviewing Sales Data" },
         {
           type: "p",
-          text: "Sales Management lets you record sales and review performance without opening a new transaction from scratch:",
-        },
-        {
-          type: "ul",
-          items: [
-            "Scan QR Code — point the camera at a customer's or product QR code to Scan Now.",
-            "Input Sales — manually enter a sale.",
-            "Switch between quick-entry modes as needed for your counter workflow.",
-          ],
-        },
-        {
-          type: "p",
-          text: "The same statistics shown on the Home dashboard — Total Sales, Points Issued, Points Redeemed, New Members — are also available here, filterable by Today, Last 7 Days, Last 30 Days, or All Time.",
+          text: "Customer details and purchase history can be reviewed using different filters and search options.",
         },
       ],
     },
