@@ -59,7 +59,7 @@ const BUSINESS_STEPS = [
   {
     icon: GiftIcon,
     title: "Reward loyalty",
-    desc: "Drive repeat visits with points, rewards and tier upgrades.",
+    desc: "Drive repeat visits with loyalty points, rewards and tier upgrades.",
   },
   {
     icon: AnalyticsIcon,

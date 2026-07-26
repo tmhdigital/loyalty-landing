@@ -125,7 +125,7 @@ const manual = {
         },
         {
           type: "p",
-          text: "Depending on your platform plan, tiers points thresholds and points accumulation rules may be managed centrally by the platform administrator or configurable directly from this screen. An audit trail of tier changes is available so you can see what has changed and when. Customer will be notified of any updates in points and tier system.",
+          text: "Depending on your platform plan, tiers points thresholds and points accumulation rules may be managed centrally by the platform administrator or configurable directly from this screen. An audit trail of tier changes is available so you can see what has changed and when. Customer will be notified of any updates in points and tier system. The merchant must setup atleast one tier system to start the loyalty program.",
         },
       ],
     },

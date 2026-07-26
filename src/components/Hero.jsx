@@ -17,14 +17,14 @@ const Hero = () => {
               Digital loyalty, done simply
             </span>
             <h1 className="text-[40px] sm:text-[48px] lg:text-[56px] leading-[1.08] font-bold text-secondary">
-              One card. Every visit.
-              <span className="text-primary"> Real rewards.</span>
+              One Platform. Endless Rewards.
+              <span className="text-primary"> Stronger Customer Loyalty.</span>
             </h1>
             <p className="mt-6 text-[17px] leading-relaxed text-muted max-w-xl">
-              Rewaldo replaces paper stamp cards with a digital loyalty wallet.
-              Customers collect points and stamps in one app, and every business
-              they visit runs their own promotions, tiers, and rewards from a
-              single dashboard.
+              Rewaldo replaces Traditional Plastic cards with a digital loyalty wallet.
+              Customers collect loyalty Points, and every business
+              they visit runs their own promotions and rewards from a
+              single app.
             </p>
 
             <div className="mt-9 flex flex-wrap items-center gap-4">
@@ -45,7 +45,7 @@ const Hero = () => {
               <div className="w-px h-9 bg-line" />
               <div>
                 <p className="text-2xl font-bold text-secondary">0</p>
-                <p className="text-sm text-muted">paper punch cards to lose</p>
+                <p className="text-sm text-muted">Traditional Plastic Cards to lose</p>
               </div>
               <div className="w-px h-9 bg-line" />
               <div>

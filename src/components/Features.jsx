@@ -18,8 +18,8 @@ const FEATURES = [
   },
   {
     icon: StampIcon,
-    title: "Points & stamps",
-    desc: "Purchases turn into points or stamps automatically, tracked per card so progress toward the next reward is always visible.",
+    title: "Loyalty Points & Rewards",
+    desc: "Purchases turn into points or rewards automatically, tracked per card so progress toward the next reward is always visible.",
   },
   {
     icon: TagIcon,
@@ -29,12 +29,12 @@ const FEATURES = [
   {
     icon: ReferralIcon,
     title: "Referral rewards",
-    desc: "Customers invite friends and both sides get credited automatically — no codes to track by hand.",
+    desc: "Customers invite friends and get cash rewards — to be used for next membership plan renewal.",
   },
   {
     icon: TierIcon,
-    title: "Packages & subscriptions",
-    desc: "Businesses choose a plan tier that fits their size, from a single storefront to a multi-location chain.",
+    title: "Tiered loyalty programs",
+    desc: "Businesse creates a loyalty program from a single storefront, and customers can see their progress toward the next tier in real time.",
   },
   {
     icon: AnalyticsIcon,

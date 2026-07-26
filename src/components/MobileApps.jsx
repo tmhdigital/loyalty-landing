@@ -40,7 +40,7 @@ const CUSTOMER_FEATURES = [
 const BUSINESS_FEATURES = [
   { icon: HandshakeIcon, label: "Free merchant onboarding" },
   { icon: StorefrontIcon, label: "Digital business profile" },
-  { icon: CatalogueIcon, label: "Product & service catalogue" },
+  { icon: CatalogueIcon, label: "Drill down to business website" },
   { icon: MegaphoneIcon, label: "Targeted marketing campaigns" },
   { icon: UsersIcon, label: "Customer segmentation" },
   { icon: TierIcon, label: "Loyalty & tier management" },

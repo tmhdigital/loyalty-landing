@@ -38,7 +38,7 @@ const ForBusiness = () => {
               </p>
               <ul className="space-y-3 mb-9">
                 {[
-                  "Design point & stamp rules per card",
+                  "Design loyalty points & tier rules",
                   "Publish and schedule promotions",
                   "View your own sales & redemption reports",
                 ].map((item) => (
@@ -71,12 +71,12 @@ const ForBusiness = () => {
               </h3>
               <p className="text-white/70 text-[15px] leading-relaxed mb-7">
                 For the Rewaldo platform team. Approve and manage every
-                business on the platform, oversee subscription packages, and
+                business on the platform, oversee membership plans, and
                 monitor the system end to end.
               </p>
               <ul className="space-y-3 mb-9">
                 {[
-                  "Manage merchant accounts & subscription packages",
+                  "Manage merchant accounts & membership plans",
                   "Platform-wide analytics and audit logs",
                   "Control roles, permissions, and access",
                 ].map((item) => (

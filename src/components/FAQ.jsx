@@ -8,15 +8,11 @@ const FAQS = [
   },
   {
     q: "What's the difference between the admin and business dashboards?",
-    a: "The business dashboard is for a single merchant to run their own loyalty program. The admin dashboard is for the Rewaldo team to oversee every merchant, subscription package, and platform-wide setting.",
-  },
-  {
-    q: "Can a business run more than one location?",
-    a: "Yes. Subscription packages scale from a single storefront up to multi-location chains, with staff roles managed per location from the business dashboard.",
+    a: "The business dashboard is for a single merchant to run their own loyalty program. The admin dashboard is for the Rewaldo team to oversee every merchant, membership plans, and platform-wide setting.",
   },
   {
     q: "How do customers redeem a reward?",
-    a: "Once a card is full, the customer redeems it from the app in one tap. The business receives an instant notification to fulfill the reward in-store.",
+    a: "When a customer has enough loyalty points to redeem a reward, they can request it through the business to redeem it. The business submits the redemtion requests, the customer appoves or declines it in the app. This process eliminates the probability of misuse of customer loyalty points.",
   },
 ];
 

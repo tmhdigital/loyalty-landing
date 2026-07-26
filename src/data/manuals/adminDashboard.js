@@ -2,7 +2,8 @@ const manual = {
   slug: "admin-dashboard",
   eyebrow: "User Manual",
   title: "Rewaldo Admin Dashboard",
-  description: "Platform operations, configuration, and analytics guide for the Rewaldo Admin Dashboard.",
+  description:
+    "Platform operations, configuration, and analytics guide for the Rewaldo Admin Dashboard.",
   version: "Version 1.0",
   sections: [
     {
@@ -67,8 +68,10 @@ const manual = {
           type: "ul",
           items: [
             "View merchant details including phone number and contact information.",
-            "Filter and review merchants by status: Active, Inactive, or Rejected.",
-            "Approve new merchant applications or take action on merchants that need to be deactivated.",
+            "Create a new merchant account and assign a sales representative to it. Allow the merchant to update missing information through profile updates in business dashboard.",
+            "Filter and review merchants based on search critera.",
+            "Approve or reject merchant applications or take action on merchants that need to be deactivated.",
+            "Export data into excel file for offline analysis.",
           ],
         },
         {
@@ -78,37 +81,11 @@ const manual = {
       ],
     },
     {
-      title: "Customer Management",
+      title: "Customer Profile",
       blocks: [
         {
           type: "p",
-          text: "Customer Management lists every customer registered across the platform. Open a Customer Profile to review their loyalty tier, points balance, gift cards, and activity history — useful for resolving support enquiries or investigating account issues.",
-        },
-      ],
-    },
-    {
-      title: "User Management",
-      blocks: [
-        {
-          type: "p",
-          text: "User Management controls the internal administrator and staff accounts that have access to this dashboard (separate from merchants and customers). From here you can:",
-        },
-        {
-          type: "ul",
-          items: [
-            "Add new admin/staff users and assign their contact phone number.",
-            "Assign access levels, such as Full access, to control what each internal user can see and do.",
-            "Review and update existing accounts from the Dashboard listing.",
-          ],
-        },
-      ],
-    },
-    {
-      title: "Loyalty Program Configuration",
-      blocks: [
-        {
-          type: "p",
-          text: "The Loyalty Program screen is where the platform's core loyalty rules live — how customers earn points, base earning rates, and program-wide settings that apply across all merchants.",
+          text: "Customer Profile lists every customer registered across the platform. Open a Customer Profile to review their loyalty tier, loyalty points balance and activity history — useful for resolving support enquiries or investigating account issues. Adminitrators can also export data for analaysis.",
         },
       ],
     },
@@ -122,11 +99,50 @@ const manual = {
         {
           type: "table",
           headers: ["Tier"],
-          rows: [["Gold Basic"], ["Gold Plus"], ["Platinum"], ["Platinum Plus"], ["Diamond"]],
+          rows: [
+            ["Gold Basic"],
+            ["Gold Plus"],
+            ["Platinum"],
+            ["Platinum Plus"],
+            ["Diamond"],
+          ],
         },
         {
           type: "p",
           text: "For each tier you can configure the point thresholds and benefits that apply once a customer reaches that level. An Audit Logs tab within Tier System keeps a record of every change made to the tier configuration.",
+        },
+        {
+          type: "p",
+          text: "THIS FEATURE IS CURRENTLY UNAVAILABLE TO COMPANY.",
+        },
+      ],
+    },
+    {
+      title: "Reporting & Analytics",
+      blocks: [
+        {
+          type: "p",
+          text: "Reporting & Analytics gives administrators deep visibility into platform performance:",
+        },
+        {
+          type: "ul",
+          items: [
+            "Accounting Reports — including Cash Collection and Cash Receivable summaries and revenue per user report.",
+            "Merchant Report — activity and engagement broken down by merchant.",
+            "Customer Report — activity and engagement broken down by customer.",
+            "Filter reports by All Customers, All Merchants, or All Metrics.",
+            "Choose your preferred visualisation: Bar Chart, Line Chart, Area Chart, or a raw Data Table.",
+            "Export data to Excel for offline analysis.",
+          ],
+        },
+      ],
+    },
+    {
+      title: "Membership Plans",
+      blocks: [
+        {
+          type: "p",
+          text: 'Membership Plans define the paid tiers merchants or customers can subscribe to on the platform, including plan features and pricing. If no plans have been configured yet, the screen will display "No membership plans available" until one is added.',
         },
       ],
     },
@@ -152,64 +168,9 @@ const manual = {
           type: "p",
           text: "All active and past campaigns are listed on the Promotions List, where you can review performance and edit or cancel a campaign.",
         },
-      ],
-    },
-    {
-      title: "Sales Rep Portal",
-      blocks: [
         {
           type: "p",
-          text: "The Sales Rep Portal supports a referral-based sales structure: each sales representative has Your Referral ID, which they share with prospective merchants or customers. The portal tracks Customers Referred by each rep, allowing admins to measure referral performance.",
-        },
-      ],
-    },
-    {
-      title: "Membership Plans",
-      blocks: [
-        {
-          type: "p",
-          text: 'Membership Plans (subscription packages) define the paid tiers merchants or customers can subscribe to on the platform, including plan features and pricing. If no plans have been configured yet, the screen will display "No membership plans available" until one is added.',
-        },
-      ],
-    },
-    {
-      title: "Reporting & Analytics",
-      blocks: [
-        { type: "p", text: "Reporting & Analytics gives administrators deep visibility into platform performance:" },
-        {
-          type: "ul",
-          items: [
-            "Accounting Reports — including Cash Collection and Cash Receivable summaries.",
-            "Customer Report — activity and engagement broken down by customer.",
-            "Filter reports by All Customers, All Merchants, or All Metrics.",
-            "Choose your preferred visualisation: Bar Chart, Line Chart, Area Chart, or a raw Data Table.",
-          ],
-        },
-      ],
-    },
-    {
-      title: "Push Notifications",
-      blocks: [
-        { type: "p", text: "Send Push Notifications lets admins broadcast a message directly to mobile app users." },
-        {
-          type: "ol",
-          items: [
-            "Open Push Notifications and select Send Push Notifications.",
-            "Enter the notification Body text.",
-            "Choose Send To: Customers, Merchants, or both.",
-            "Narrow the audience further by City, Country, or Tier if needed.",
-            "Filter recipients by Status (Active/Inactive) to avoid notifying inactive accounts.",
-            "Use Preview to check how the notification will appear, then send.",
-          ],
-        },
-      ],
-    },
-    {
-      title: "Audit Logs",
-      blocks: [
-        {
-          type: "p",
-          text: "Audit Logs provide a chronological record of significant actions taken across the platform (such as changes to tiers, merchants, or promotions), supporting accountability and troubleshooting.",
+          text: "THIS FEATURE IS FOR LIMITED USE ONLY FOR COMPANY PERSONAL CAMPAIGNS.",
         },
       ],
     },
@@ -223,11 +184,65 @@ const manual = {
       ],
     },
     {
+      title: "Push Notifications",
+      blocks: [
+        {
+          type: "p",
+          text: "Send Push Notifications lets admins broadcast a message directly to mobile app users.",
+        },
+        {
+          type: "ol",
+          items: [
+            "Open Push Notifications and select Send Push Notifications.",
+            "Enter the notification Body text.",
+            "Choose Send To: Customers, Merchants, or both.",
+            "Narrow the audience further by City, Country, or membership type if needed.",
+            "Filter recipients by Status (Active/Inactive) to avoid notifying inactive accounts.",
+          ],
+        },
+      ],
+    },
+    {
+      title: "Sales Rep Portal",
+      blocks: [
+        {
+          type: "p",
+          text: "The Sales Rep Portal supports a referral-based sales structure: each sales representative has Your Referral ID, which they share with prospective merchants or customers. The portal tracks Customers Referred by each rep, allowing admins to measure referral performance.",
+        },
+      ],
+    },
+    {
+      title: "Audit Logs",
+      blocks: [
+        {
+          type: "p",
+          text: "Audit Logs provide a chronological record of significant actions taken across the platform (such as changes to tiers, merchants, or promotions), supporting accountability and troubleshooting.",
+        },
+      ],
+    },
+    {
       title: "Profile & Account Settings",
       blocks: [
         {
           type: "p",
           text: "From Profile, administrators can update their own account details, review notifications, and access the platform's Privacy Policy and Terms & Conditions.",
+        },
+      ],
+    },
+    {
+      title: "User Management",
+      blocks: [
+        {
+          type: "p",
+          text: "User Management controls the internal administrator and staff accounts that have access to this dashboard (separate from merchants and customers). From here you can:",
+        },
+        {
+          type: "ul",
+          items: [
+            "Add new admin/staff users (Administrator, Sales Representative, View User and Admin Fin) and assign their contact phone number.",
+            "Access levels are pre-assigned based on roles.",
+            "Review and update existing accounts from the Dashboard listing.",
+          ],
         },
       ],
     },
@@ -252,7 +267,7 @@ const manual = {
             ],
             [
               '"No membership plans available"',
-              "This means no subscription package has been configured yet — create one from Membership Plans.",
+              "This means no membership plan has been configured yet — create one from Membership Plans.",
             ],
           ],
         },
