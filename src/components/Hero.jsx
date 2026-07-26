@@ -17,7 +17,7 @@ const Hero = () => {
               Digital loyalty, done simply
             </span>
             <h1 className="text-[40px] sm:text-[48px] lg:text-[56px] leading-[1.08] font-bold text-secondary">
-              One Platform. Endless Rewards.
+              One Platform, Endless Rewards.
               <span className="text-primary"> Stronger Customer Loyalty.</span>
             </h1>
             <p className="mt-6 text-[17px] leading-relaxed text-muted max-w-xl">
@@ -37,7 +37,15 @@ const Hero = () => {
                 Open business dashboard
               </a>
             </div>
-            <div className="mt-12 flex items-center gap-8 flex-wrap">
+          </div>
+        </Reveal>
+
+        <Reveal delay={120}>
+          <div className="flex flex-col items-center">
+            <div className="-mt-4 lg:-mt-10">
+              <LoyaltyCardStack />
+            </div>
+            <div className="mt-12 flex items-center justify-center gap-8 flex-wrap">
               <div>
                 <p className="text-2xl font-bold text-secondary">1</p>
                 <p className="text-sm text-muted">wallet for every store card</p>
@@ -54,10 +62,6 @@ const Hero = () => {
               </div>
             </div>
           </div>
-        </Reveal>
-
-        <Reveal delay={120}>
-          <LoyaltyCardStack />
         </Reveal>
       </div>
     </section>

@@ -207,7 +207,11 @@ const manual = {
       blocks: [
         {
           type: "p",
-          text: "The Sales Rep Portal supports a referral-based sales structure: each sales representative has Your Referral ID, which they share with prospective merchants or customers. The portal tracks Customers Referred by each rep, allowing admins to measure referral performance.",
+          text: "The Sales Rep Portal supports a referral-based sales structure: each sales representative has a Referral ID, which they share with prospective merchants or customers. The portal tracks Customers Referred by each rep, allowing admins to measure referral performance.",
+        },
+        {
+          type: "p",
+          text: "The sales rep can onboard a cash customer through an exclusive procedure where he activates an customer account instently, collects cash and deposits it with accounts. Accountant will mark receipt in the app to clear sales repreceivable account.",
         },
       ],
     },
