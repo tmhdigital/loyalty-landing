@@ -67,7 +67,7 @@ export async function POST(request) {
 
   try {
     await transporter.sendMail({
-      from: `"Rewaldo Website" <${gmailUser}>`,
+      from: ` ${firstName} ${lastName}"Rewaldo Website" <${gmailUser}>`,
       to: process.env.INQUIRY_RECIPIENT_EMAIL || gmailUser,
       replyTo: businessEmail,
       subject: `New merchant inquiry — ${businessName}`,
