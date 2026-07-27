@@ -79,7 +79,7 @@ export async function POST(request) {
   const resend = new Resend(resendApiKey);
 
   const { error } = await resend.emails.send({
-    from: process.env.EMAIL_FROM || "Rewaldo <onboarding@resend.dev>",
+    from: process.env.INQUIRY_FROM_EMAIL || "Rewaldo <onboarding@resend.dev>",
     to: recipient,
     replyTo: businessEmail,
     subject: `New merchant inquiry — ${businessName}`,

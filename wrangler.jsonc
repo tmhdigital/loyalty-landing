@@ -6,5 +6,13 @@
   "assets": {
     "directory": ".open-next/assets",
     "binding": "ASSETS"
+  },
+  // Non-sensitive values only. RESEND_API_KEY must NOT go here — set it as a
+  // Secret in the Cloudflare dashboard (or via `wrangler secret put`) instead,
+  // since plaintext vars set only in the dashboard get dropped by Wrangler on
+  // every deploy unless they're also declared in this file.
+  "vars": {
+    "INQUIRY_RECIPIENT_EMAIL": "admin.tmh.smc@gmail.com",
+    "INQUIRY_FROM_EMAIL": "Rewaldo <inquiries@rewaldo.com>"
   }
 }
