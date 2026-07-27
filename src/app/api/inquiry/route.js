@@ -1,11 +1,6 @@
-import fs from "node:fs";
-import path from "node:path";
-import nodemailer from "nodemailer";
+import { Resend } from "resend";
 import { NextResponse } from "next/server";
 import { buildInquiryEmail } from "./email";
-
-const LOGO_CID = "rewaldo-logo";
-const LOGO_PATH = path.join(process.cwd(), "public", "logo.png");
 
 const REQUIRED_FIELDS = [
   "businessName",
@@ -50,27 +45,18 @@ export async function POST(request) {
     message,
   } = data;
 
-  const gmailUser = process.env.GMAIL_USER;
-  const gmailAppPassword = process.env.GMAIL_APP_PASSWORD;
+  const resendApiKey = process.env.RESEND_API_KEY;
+  const recipient = process.env.INQUIRY_RECIPIENT_EMAIL;
 
-  if (!gmailUser || !gmailAppPassword) {
-    console.error("Missing GMAIL_USER / GMAIL_APP_PASSWORD environment variables.");
+  if (!resendApiKey || !recipient) {
+    console.error("Missing RESEND_API_KEY / INQUIRY_RECIPIENT_EMAIL environment variables.");
     return NextResponse.json(
       { ok: false, error: "Inquiry form is not configured yet. Please try again later." },
       { status: 500 },
     );
   }
 
-  const transporter = nodemailer.createTransport({
-    host: "smtp.gmail.com",
-    port: 465,
-    secure: true,
-    auth: {
-      user: gmailUser,
-      pass: gmailAppPassword,
-    },
-  });
-
+  const LOGO_CID = "rewaldo-logo";
   const { html, text } = buildInquiryEmail({
     businessName,
     firstName,
@@ -84,29 +70,37 @@ export async function POST(request) {
     logoCid: LOGO_CID,
   });
 
-  try {
-    await transporter.sendMail({
-      from: `"${businessName} (via Rewaldo)" <${gmailUser}>`,
-      to: process.env.INQUIRY_RECIPIENT_EMAIL || gmailUser,
-      replyTo: businessEmail,
-      subject: `New merchant inquiry — ${businessName}`,
-      text,
-      html,
-      attachments: [
-        {
-          filename: "logo.png",
-          path: LOGO_PATH,
-          cid: LOGO_CID,
-        },
-      ],
-    });
+  // Pull the logo from this app's own public/ folder — via fetch (not fs),
+  // so it works the same whether running under Node or Cloudflare Workers.
+  const origin = new URL(request.url).origin;
+  const logoResponse = await fetch(`${origin}/logo.png`);
+  const logoBuffer = Buffer.from(await logoResponse.arrayBuffer());
 
-    return NextResponse.json({ ok: true });
-  } catch (err) {
-    console.error("Failed to send merchant inquiry email:", err);
+  const resend = new Resend(resendApiKey);
+
+  const { error } = await resend.emails.send({
+    from: process.env.EMAIL_FROM || "Rewaldo <onboarding@resend.dev>",
+    to: recipient,
+    replyTo: businessEmail,
+    subject: `New merchant inquiry — ${businessName}`,
+    html,
+    text,
+    attachments: [
+      {
+        filename: "logo.png",
+        content: logoBuffer,
+        contentId: LOGO_CID,
+      },
+    ],
+  });
+
+  if (error) {
+    console.error("Failed to send merchant inquiry email:", error);
     return NextResponse.json(
       { ok: false, error: "Failed to send your inquiry. Please try again later." },
       { status: 500 },
     );
   }
+
+  return NextResponse.json({ ok: true });
 }

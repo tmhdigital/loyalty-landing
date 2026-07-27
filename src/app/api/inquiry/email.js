@@ -94,7 +94,7 @@ export const buildInquiryEmail = ({
   const text = [
     `New merchant inquiry — ${businessName}`,
     "",
-    `Contact: ${firstName} ${lastName}`,
+    `Name: ${firstName} ${lastName}`,
     `Phone: ${phone}`,
     `Business email: ${businessEmail}`,
     `Number of physical locations: ${locationsCount}`,
