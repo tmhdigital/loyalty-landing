@@ -1,6 +1,7 @@
+"use client";
+
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import logo from "../assets/logo.png";
+import Link from "next/link";
 import { DASHBOARD_LINKS } from "../config";
 
 const NAV_LINKS = [
@@ -10,6 +11,7 @@ const NAV_LINKS = [
   { label: "Benefits", href: "/#benefits" },
   { label: "For business", href: "/#for-business" },
   { label: "FAQ", href: "/#faq" },
+  { label: "Inquire", href: "/#inquire" },
 ];
 
 const Navbar = () => {
@@ -29,8 +31,8 @@ const Navbar = () => {
       }`}
     >
       <nav className="max-w-7xl mx-auto flex items-center justify-between px-6 lg:px-10 h-20">
-        <Link to="/" className="flex items-center gap-2 shrink-0">
-          <img src={logo} alt="Rewaldo" className="h-9 w-auto" />
+        <Link href="/" className="flex items-center gap-2 shrink-0">
+          <img src="/logo.png" alt="Rewaldo" className="h-9 w-auto" />
         </Link>
 
         <div className="hidden xl:flex items-center gap-6">

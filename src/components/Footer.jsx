@@ -1,6 +1,7 @@
+"use client";
+
 import { useState } from "react";
-import { Link } from "react-router-dom";
-import logo from "../assets/logo.png";
+import Link from "next/link";
 import { DASHBOARD_LINKS } from "../config";
 import { useAdminAuth } from "../context/AdminAuthContext";
 import AdminLoginModal from "./AdminLoginModal";
@@ -13,7 +14,7 @@ const Footer = () => {
     <footer className="border-t border-line">
       <div className="max-w-7xl mx-auto px-6 lg:px-10 py-14 grid sm:grid-cols-2 lg:grid-cols-5 gap-10">
         <div>
-          <img src={logo} alt="Rewaldo" className="h-8 w-auto mb-4" />
+          <img src="/logo.png" alt="Rewaldo" className="h-8 w-auto mb-4" />
           <p className="text-muted text-[14px] leading-relaxed max-w-xs">
             The digital loyalty platform connecting customers and local
             businesses through one wallet.
@@ -42,11 +43,11 @@ const Footer = () => {
         <div>
           <p className="font-semibold text-ink text-[14px] mb-4">User manuals</p>
           <ul className="space-y-3 text-[14px] text-muted">
-            <li><Link to="/manuals/customer-app" className="hover:text-primary">Customer app</Link></li>
-            <li><Link to="/manuals/business-app" className="hover:text-primary">Business app</Link></li>
-            <li><Link to="/manuals/business-dashboard" className="hover:text-primary">Business dashboard</Link></li>
+            <li><Link href="/manuals/customer-app" className="hover:text-primary">Customer app</Link></li>
+            <li><Link href="/manuals/business-app" className="hover:text-primary">Business app</Link></li>
+            <li><Link href="/manuals/business-dashboard" className="hover:text-primary">Business dashboard</Link></li>
             {isAdmin && (
-              <li><Link to="/manuals/admin-dashboard" className="hover:text-primary">Admin dashboard</Link></li>
+              <li><Link href="/manuals/admin-dashboard" className="hover:text-primary">Admin dashboard</Link></li>
             )}
           </ul>
         </div>
@@ -55,7 +56,7 @@ const Footer = () => {
           <p className="font-semibold text-ink text-[14px] mb-4">Company</p>
           <ul className="space-y-3 text-[14px] text-muted">
             <li><a href="#" className="hover:text-primary">Contact us</a></li>
-            <li><Link to="/privacy-policy" className="hover:text-primary">Privacy policy</Link></li>
+            <li><Link href="/privacy-policy" className="hover:text-primary">Privacy policy</Link></li>
             <li><a href="#" className="hover:text-primary">Terms of service</a></li>
           </ul>
         </div>

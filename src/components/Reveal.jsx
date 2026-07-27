@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useRef, useState } from "react";
 
 const Reveal = ({ as: Tag = "div", delay = 0, className = "", children }) => {

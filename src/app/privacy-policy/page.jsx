@@ -1,4 +1,10 @@
-import DocsPage from "../components/docs/DocsPage";
+import DocsPage from "../../components/docs/DocsPage";
+
+export const metadata = {
+  title: "Privacy Policy — Rewaldo",
+  description:
+    "Privacy Policy for the Rewaldo Customer and Merchant Applications, operated by TMH Digital (SMC-Private) Limited.",
+};
 
 const SECTIONS = [
   {
@@ -315,7 +321,7 @@ const SECTIONS = [
   },
 ];
 
-const PrivacyPolicy = () => {
+export default function PrivacyPolicy() {
   return (
     <DocsPage
       eyebrow="Legal"
@@ -324,6 +330,4 @@ const PrivacyPolicy = () => {
       sections={SECTIONS}
     />
   );
-};
-
-export default PrivacyPolicy;
+}

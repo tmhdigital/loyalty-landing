@@ -1,4 +1,7 @@
 node_modules
-dist
+.next
+.open-next
 .DS_Store
 .env
+.env.local
+.dev.vars

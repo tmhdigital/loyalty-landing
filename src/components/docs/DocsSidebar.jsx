@@ -1,10 +1,13 @@
-import { Link, useNavigate } from "react-router-dom";
+"use client";
+
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { getDocsNav } from "../../data/manuals";
 import { useAdminAuth } from "../../context/AdminAuthContext";
 import { slugify } from "./ManualContent";
 
 export const DocsMobileNav = ({ currentPath }) => {
-  const navigate = useNavigate();
+  const router = useRouter();
   const { isAdmin } = useAdminAuth();
   const docsNav = getDocsNav(isAdmin);
 
@@ -15,7 +18,7 @@ export const DocsMobileNav = ({ currentPath }) => {
       </label>
       <select
         value={currentPath}
-        onChange={(e) => navigate(e.target.value)}
+        onChange={(e) => router.push(e.target.value)}
         className="w-full rounded-xl border border-line px-4 py-3 text-[14px] text-ink bg-white focus:outline-none focus:border-primary"
       >
         {docsNav.map((group) => (
@@ -55,7 +58,7 @@ const DocsSidebar = ({ currentPath, sections }) => {
                     return (
                       <li key={item.path}>
                         <Link
-                          to={item.path}
+                          href={item.path}
                           className={`text-[13.5px] transition-colors ${
                             active
                               ? "text-primary font-semibold"

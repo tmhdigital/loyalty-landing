@@ -6,8 +6,9 @@ import Benefits from "../components/Benefits";
 import ForBusiness from "../components/ForBusiness";
 import FAQ from "../components/FAQ";
 import CTABanner from "../components/CTABanner";
+import MerchantInquiryForm from "../components/MerchantInquiryForm";
 
-const Home = () => {
+export default function Home() {
   return (
     <>
       <Hero />
@@ -18,9 +19,7 @@ const Home = () => {
       <ForBusiness />
       <FAQ />
       <CTABanner />
+      <MerchantInquiryForm />
     </>
   );
-};
-
-export default Home;
-
+}

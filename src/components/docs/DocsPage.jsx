@@ -1,9 +1,11 @@
-import { useLocation } from "react-router-dom";
+"use client";
+
+import { usePathname } from "next/navigation";
 import DocsSidebar, { DocsMobileNav } from "./DocsSidebar";
 import ManualSections from "./ManualContent";
 
 const DocsPage = ({ eyebrow, title, description, meta, sections }) => {
-  const { pathname } = useLocation();
+  const pathname = usePathname();
 
   return (
     <section className="pt-36 pb-24 bg-white">

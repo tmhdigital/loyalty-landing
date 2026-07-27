@@ -1,5 +1,3 @@
-import customerIcon from "../assets/customer-app-icon-512.png";
-import businessIcon from "../assets/merchant-app-icon-512.png";
 import { APP_LINKS } from "../config";
 import AppDownloadCard from "./AppDownloadCard";
 import PhoneMockup from "./PhoneMockup";
@@ -175,7 +173,7 @@ const BusinessAppScreen = () => (
     <div className="px-5 pt-1 pb-3 flex items-center justify-between">
       <div className="flex items-center gap-2.5">
         <img
-          src={businessIcon}
+          src="/merchant-app-icon-512.png"
           alt=""
           className="w-9 h-9 rounded-full object-cover shrink-0"
         />
@@ -268,7 +266,7 @@ const MobileApps = () => {
 
         <div className="space-y-8">
           <AppDownloadCard
-            icon={customerIcon}
+            icon="/customer-app-icon-512.png"
             iconAlt="Rewaldo Customer app icon"
             eyebrow="Customer app"
             name="Rewaldo"
@@ -280,7 +278,7 @@ const MobileApps = () => {
           />
 
           <AppDownloadCard
-            icon={businessIcon}
+            icon="/merchant-app-icon-512.png"
             iconAlt="Rewaldo: Business app icon"
             eyebrow="Business app"
             name="Rewaldo: Business"

@@ -1,5 +1,3 @@
-import cardFront from "../assets/rewaldo-card-green-front.png";
-
 const LoyaltyCardStack = () => {
   return (
     <div className="relative w-full max-w-[420px] mx-auto select-none">
@@ -11,7 +9,7 @@ const LoyaltyCardStack = () => {
       {/* front card */}
       <div className="relative w-full h-56 rounded-3xl shadow-card animate-float overflow-hidden">
         <img
-          src={cardFront}
+          src="/rewaldo-card-green-front.png"
           alt="Rewaldo loyalty card"
           className="w-full h-full object-cover rounded-3xl"
         />
