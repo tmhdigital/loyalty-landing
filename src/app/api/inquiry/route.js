@@ -1,5 +1,11 @@
+import fs from "node:fs";
+import path from "node:path";
 import nodemailer from "nodemailer";
 import { NextResponse } from "next/server";
+import { buildInquiryEmail } from "./email";
+
+const LOGO_CID = "rewaldo-logo";
+const LOGO_PATH = path.join(process.cwd(), "public", "logo.png");
 
 const REQUIRED_FIELDS = [
   "businessName",
@@ -65,24 +71,34 @@ export async function POST(request) {
     },
   });
 
+  const { html, text } = buildInquiryEmail({
+    businessName,
+    firstName,
+    lastName,
+    phone,
+    businessEmail,
+    locationsCount,
+    city,
+    facebookUrl,
+    message,
+    logoCid: LOGO_CID,
+  });
+
   try {
     await transporter.sendMail({
-      from: ` ${firstName} ${lastName}"Rewaldo Website" <${gmailUser}>`,
+      from: `"${businessName} (via Rewaldo)" <${gmailUser}>`,
       to: process.env.INQUIRY_RECIPIENT_EMAIL || gmailUser,
       replyTo: businessEmail,
       subject: `New merchant inquiry — ${businessName}`,
-      text: [
-        `Business name: ${businessName}`,
-        `Contact: ${firstName} ${lastName}`,
-        `Phone: ${phone}`,
-        `Business email: ${businessEmail}`,
-        `Number of physical locations: ${locationsCount}`,
-        `City: ${city}`,
-        `Facebook page: ${facebookUrl || "-"}`,
-        "",
-        `Message:`,
-        message || "-",
-      ].join("\n"),
+      text,
+      html,
+      attachments: [
+        {
+          filename: "logo.png",
+          path: LOGO_PATH,
+          cid: LOGO_CID,
+        },
+      ],
     });
 
     return NextResponse.json({ ok: true });
