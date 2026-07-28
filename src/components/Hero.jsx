@@ -42,13 +42,13 @@ const Hero = () => {
 
         <Reveal delay={120}>
           <div className="flex flex-col items-center">
-            <div className="-mt-4 lg:-mt-10">
+            <div className="mt-8 lg:mt-10">
               <LoyaltyCardStack />
             </div>
-            <div className="mt-12 flex items-center justify-center gap-8 flex-wrap">
+            <div className="mt-8 flex items-center ml-20 justify-center gap-4">
               <div>
                 <p className="text-2xl font-bold text-secondary">1</p>
-                <p className="text-sm text-muted">wallet for every store card</p>
+                <p className="text-sm text-muted">Wallet for every store card</p>
               </div>
               <div className="w-px h-9 bg-line" />
               <div>
