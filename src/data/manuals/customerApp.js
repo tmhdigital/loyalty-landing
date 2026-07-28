@@ -198,6 +198,47 @@ const manual = {
         },
       ],
     },
+     {
+      title: "Earnings & Redeeming Points",
+      blocks: [
+        {
+          type: "p",
+          text: "When you want to use your points at checkout (in-store), you approve a redemption request from your app:",
+        },
+        {
+          type: "ol",
+          items: [
+            "From the Wallet or the merchant's checkout (New Sale) flow, choose Redeem Points.",
+            "Advise the Merchant the number of points you want to redeem.",
+            "Confirm the Redemption Request that comes on your customer app. The request is sent in real time from the merchant's point-of-sale device for approval.",
+            "Once the merchant confirms the transaction, your points balance and gift card wallet update automatically.",
+          ],
+        },
+        {
+          type: "note",
+          text: "Redemption requests are delivered instantly using a live connection between your app and the merchant's device, so make sure you have an internet connection while checking out.",
+        },
+      ],
+      blocks: [
+        {
+          type: "p",
+          text: "When you want to use your points at checkout (in-store), you approve a redemption request from your app:",
+        },
+        {
+          type: "ol",
+          items: [
+            "From the Wallet or the merchant's checkout (New Sale) flow, choose Redeem Points.",
+            "Advise the Merchant the number of points you want to redeem.",
+            "Confirm the Redemption Request that comes on your customer app. The request is sent in real time from the merchant's point-of-sale device for approval.",
+            "Once the merchant confirms the transaction, your points balance and gift card wallet update automatically.",
+          ],
+        },
+        {
+          type: "note",
+          text: "Redemption requests are delivered instantly using a live connection between your app and the merchant's device, so make sure you have an internet connection while checking out.",
+        },
+      ],
+    },
     {
       title: "Special Promotions",
       blocks: [

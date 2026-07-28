@@ -4,7 +4,10 @@ import { DASHBOARD_LINKS } from "../config";
 
 const Hero = () => {
   return (
-    <section id="top" className="relative pt-36 pb-20 lg:pt-44 lg:pb-28 overflow-hidden">
+    <section id="top" className="relative pt-12 pb-20 lg:pt-16 lg:pb-28 overflow-hidden">
+      {/* Continues the color flow from HeroIntro: starts at the same light
+          green as HeroIntro's bottom, then settles into Hero's white. */}
+      <div className="absolute inset-0 -z-20 bg-[linear-gradient(180deg,#E3F5EC_0%,#EFF9F3_28%,#FFFFFF_58%)]" />
       <div className="absolute inset-0 -z-10">
         <div className="absolute -top-40 -left-32 w-[420px] h-[420px] rounded-full bg-primaryLight blur-3xl" />
         <div className="absolute top-40 -right-40 w-[380px] h-[380px] rounded-full bg-primaryLight blur-3xl" />

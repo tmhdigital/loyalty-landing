@@ -63,15 +63,22 @@ const MerchantInquiryForm = () => {
   };
 
   return (
-    <section id="inquire" className="py-16 lg:py-20 bg-white">
-      <div className="max-w-3xl mx-auto px-6 lg:px-10">
+    <section id="inquire" className="relative overflow-hidden py-16 lg:py-24">
+      {/* Soft green halo so the card lifts off the page */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute left-1/2 top-1/2 h-[620px] w-[620px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/15 blur-[130px]"
+      />
+
+      <div className="relative max-w-3xl mx-auto px-6 lg:px-10">
         <Reveal>
           <div className="text-center mb-12">
-            <p className="text-primary font-semibold text-sm tracking-wide uppercase mb-3">
+            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-pill bg-primaryLight text-primaryDark text-[13px] font-semibold mb-5">
+              <span className="h-2 w-2 rounded-full bg-primary" />
               Partner with us
-            </p>
-            <h2 className="text-[32px] sm:text-[40px] font-bold text-secondary leading-tight">
-              Become a Rewaldo merchant
+            </span>
+            <h2 className="text-[34px] sm:text-[46px] font-bold text-secondary leading-[1.1]">
+              Become a <span className="text-primary">Rewaldo</span> Merchant
             </h2>
             <p className="mt-4 text-muted text-[16px] leading-relaxed max-w-xl mx-auto">
               Tell us about your business and our team will reach out to get you
@@ -81,95 +88,102 @@ const MerchantInquiryForm = () => {
         </Reveal>
 
         <Reveal delay={80}>
-          <div className="rounded-3xl border border-line p-8 lg:p-10">
-            {status === "success" ? (
-              <div className="text-center py-10">
-                <div className="w-14 h-14 mx-auto rounded-full bg-primaryLight text-primary flex items-center justify-center text-2xl font-bold mb-5">
-                  ✓
-                </div>
-                <h3 className="text-[22px] font-bold text-secondary mb-2">
-                  Thanks — we've got it!
-                </h3>
-                <p className="text-muted text-[15px] leading-relaxed max-w-sm mx-auto">
-                  Our team will review your details and reach out shortly to get
-                  your business set up on Rewaldo.
-                </p>
-                <button
-                  type="button"
-                  onClick={() => setStatus("idle")}
-                  className="mt-6 px-6 py-3 rounded-pill border border-line text-ink font-semibold text-[14px] hover:border-primary hover:text-primary transition-colors"
-                >
-                  Submit another inquiry
-                </button>
-              </div>
-            ) : (
-              <form onSubmit={handleSubmit} className="space-y-5">
-                <input
-                  type="text"
-                  name="company_website"
-                  value={values.company_website}
-                  onChange={handleChange}
-                  tabIndex={-1}
-                  autoComplete="off"
-                  aria-hidden="true"
-                  className="hidden"
-                />
+          <div className="overflow-hidden rounded-3xl bg-white ring-1 ring-primary/10 shadow-[0_40px_90px_-30px_rgba(20,102,63,0.45)]">
+            {/* Gradient accent bar */}
+            <div className="h-1.5 w-full bg-gradient-to-r from-primary via-emerald-400 to-primaryDark" />
 
-                <div className="grid sm:grid-cols-2 gap-5">
-                  {CATEGORY_FIELDS.map((field) => (
-                    <div key={field.name}>
-                      <label
-                        htmlFor={field.name}
-                        className="block text-[13px] font-medium text-ink mb-1.5"
-                      >
-                        {field.label}
-                        {field.required && <span className="text-primary"> *</span>}
-                      </label>
-                      <input
-                        id={field.name}
-                        name={field.name}
-                        type={field.type}
-                        required={field.required}
-                        min={field.type === "number" ? 1 : undefined}
-                        value={values[field.name]}
-                        onChange={handleChange}
-                        className="w-full rounded-xl border border-line px-4 py-2.5 text-[14px] text-ink focus:outline-none focus:border-primary"
-                      />
-                    </div>
-                  ))}
-                </div>
-
-                <div>
-                  <label
-                    htmlFor="message"
-                    className="block text-[13px] font-medium text-ink mb-1.5"
+            <div className="p-8 lg:p-10">
+              {status === "success" ? (
+                <div className="text-center py-10">
+                  <div className="w-14 h-14 mx-auto rounded-full bg-primaryLight text-primary flex items-center justify-center text-2xl font-bold mb-5">
+                    ✓
+                  </div>
+                  <h3 className="text-[22px] font-bold text-secondary mb-2">
+                    Thanks — we've got it!
+                  </h3>
+                  <p className="text-muted text-[15px] leading-relaxed max-w-sm mx-auto">
+                    Our team will review your details and reach out shortly to
+                    get your business set up on Rewaldo.
+                  </p>
+                  <button
+                    type="button"
+                    onClick={() => setStatus("idle")}
+                    className="mt-6 px-6 py-3 rounded-pill border border-line text-ink font-semibold text-[14px] hover:border-primary hover:text-primary transition-colors"
                   >
-                    Message
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    rows={4}
-                    value={values.message}
-                    onChange={handleChange}
-                    placeholder="Anything else we should know?"
-                    className="w-full rounded-xl border border-line px-4 py-2.5 text-[14px] text-ink focus:outline-none focus:border-primary resize-none"
-                  />
+                    Submit another inquiry
+                  </button>
                 </div>
+              ) : (
+                <form onSubmit={handleSubmit} className="space-y-5">
+                  <input
+                    type="text"
+                    name="company_website"
+                    value={values.company_website}
+                    onChange={handleChange}
+                    tabIndex={-1}
+                    autoComplete="off"
+                    aria-hidden="true"
+                    className="hidden"
+                  />
 
-                {status === "error" && (
-                  <p className="text-[13px] text-red-600 font-medium">{error}</p>
-                )}
+                  <div className="grid sm:grid-cols-2 gap-5">
+                    {CATEGORY_FIELDS.map((field) => (
+                      <div key={field.name}>
+                        <label
+                          htmlFor={field.name}
+                          className="block text-[13px] font-semibold text-ink mb-1.5"
+                        >
+                          {field.label}
+                          {field.required && (
+                            <span className="text-primary"> *</span>
+                          )}
+                        </label>
+                        <input
+                          id={field.name}
+                          name={field.name}
+                          type={field.type}
+                          required={field.required}
+                          min={field.type === "number" ? 1 : undefined}
+                          value={values[field.name]}
+                          onChange={handleChange}
+                          className="w-full rounded-xl border border-line bg-white px-4 py-2.5 text-[14px] text-ink transition-shadow focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20"
+                        />
+                      </div>
+                    ))}
+                  </div>
 
-                <button
-                  type="submit"
-                  disabled={status === "submitting"}
-                  className="w-full sm:w-auto px-8 py-3.5 rounded-pill bg-primary text-white font-semibold text-[15px] hover:bg-primaryDark shadow-soft transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
-                >
-                  {status === "submitting" ? "Sending…" : "Submit inquiry"}
-                </button>
-              </form>
-            )}
+                  <div>
+                    <label
+                      htmlFor="message"
+                      className="block text-[13px] font-semibold text-ink mb-1.5"
+                    >
+                      Message
+                    </label>
+                    <textarea
+                      id="message"
+                      name="message"
+                      rows={4}
+                      value={values.message}
+                      onChange={handleChange}
+                      placeholder="Anything else we should know?"
+                      className="w-full rounded-xl border border-line bg-white px-4 py-2.5 text-[14px] text-ink transition-shadow focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 resize-none"
+                    />
+                  </div>
+
+                  {status === "error" && (
+                    <p className="text-[13px] text-red-600 font-medium">{error}</p>
+                  )}
+
+                  <button
+                    type="submit"
+                    disabled={status === "submitting"}
+                    className="w-full sm:w-auto px-9 py-4 rounded-pill bg-gradient-to-r from-primary to-primaryDark text-white font-semibold text-[15px] shadow-soft transition-all hover:brightness-105 hover:shadow-lg disabled:opacity-60 disabled:cursor-not-allowed"
+                  >
+                    {status === "submitting" ? "Sending…" : "Submit inquiry"}
+                  </button>
+                </form>
+              )}
+            </div>
           </div>
         </Reveal>
       </div>

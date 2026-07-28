@@ -24,6 +24,18 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // At the very top the navbar sits over the dark animated intro hero,
+  // so links/buttons switch to white for contrast. Once scrolled the
+  // navbar gets a white background and returns to dark text.
+  const linkColor = scrolled
+    ? "text-ink/80 hover:text-primary"
+    : "text-white/90 hover:text-white";
+  const adminBtn = scrolled
+    ? "text-ink border-line hover:border-primary hover:text-primary"
+    : "text-white border-white/40 hover:bg-white/10";
+  const burgerBar = scrolled ? "bg-ink" : "bg-white";
+  const burgerBorder = scrolled ? "border-line" : "border-white/40";
+
   return (
     <header
       className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${
@@ -40,7 +52,7 @@ const Navbar = () => {
             <a
               key={link.label}
               href={link.href}
-              className="text-[15px] font-medium text-ink/80 hover:text-primary transition-colors"
+              className={`text-[15px] font-medium transition-colors ${linkColor}`}
             >
               {link.label}
             </a>
@@ -52,7 +64,7 @@ const Navbar = () => {
             href={DASHBOARD_LINKS.admin}
             target="_blank"
             rel="noopener noreferrer"
-            className="px-5 py-2.5 rounded-pill text-[14px] font-semibold text-ink border border-line hover:border-primary hover:text-primary transition-colors"
+            className={`px-5 py-2.5 rounded-pill text-[14px] font-semibold border transition-colors ${adminBtn}`}
           >
             Admin login
           </a>
@@ -69,17 +81,17 @@ const Navbar = () => {
         <button
           aria-label="Toggle menu"
           onClick={() => setOpen((v) => !v)}
-          className="xl:hidden w-10 h-10 flex items-center justify-center rounded-full border border-line"
+          className={`xl:hidden w-10 h-10 flex items-center justify-center rounded-full border ${burgerBorder}`}
         >
           <div className="flex flex-col gap-1.5">
             <span
-              className={`block h-0.5 w-5 bg-ink transition-transform ${open ? "translate-y-2 rotate-45" : ""}`}
+              className={`block h-0.5 w-5 transition-transform ${burgerBar} ${open ? "translate-y-2 rotate-45" : ""}`}
             />
             <span
-              className={`block h-0.5 w-5 bg-ink transition-opacity ${open ? "opacity-0" : ""}`}
+              className={`block h-0.5 w-5 transition-opacity ${burgerBar} ${open ? "opacity-0" : ""}`}
             />
             <span
-              className={`block h-0.5 w-5 bg-ink transition-transform ${open ? "-translate-y-2 -rotate-45" : ""}`}
+              className={`block h-0.5 w-5 transition-transform ${burgerBar} ${open ? "-translate-y-2 -rotate-45" : ""}`}
             />
           </div>
         </button>
