@@ -2,6 +2,7 @@ import { Poppins } from "next/font/google";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import WhatsAppButton from "../components/WhatsAppButton";
+import ChatWidget from "../components/ChatWidget";
 import { AdminAuthProvider } from "../context/AdminAuthContext";
 import "./globals.css";
 
@@ -35,6 +36,7 @@ export default function RootLayout({ children }) {
           <main>{children}</main>
           <Footer />
           <WhatsAppButton />
+          <ChatWidget />
         </AdminAuthProvider>
       </body>
     </html>
