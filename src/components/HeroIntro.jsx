@@ -1,6 +1,16 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
+
+// Cycled one-by-one under the "Rewaldo" wordmark to give a full product overview.
+const PRODUCT_OVERVIEW = [
+  "One digital wallet for every store you love. Collect points, unlock tiers and enjoy live rewards, all from a single app.",
+  "Businesses swap plastic punch cards for a digital loyalty program they run from one simple dashboard.",
+  "Every visit earns points automatically, and customers watch their progress toward the next reward in real time.",
+  "Merchants publish promotions and offers that reach customers instantly, the moment they open the app.",
+  "Invite friends to earn cash rewards, and climb loyalty tiers the more you engage with your favourite stores.",
+  "Owners and admins get clear analytics on redemptions, repeat visits and top rewards, all in one place.",
+];
 
 /**
  * HeroIntro
@@ -22,6 +32,14 @@ import { useEffect, useRef } from "react";
  */
 const HeroIntro = ({ videoSrc = "" }) => {
   const canvasRef = useRef(null);
+  const [tagIndex, setTagIndex] = useState(0);
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      setTagIndex((i) => (i + 1) % PRODUCT_OVERVIEW.length);
+    }, 7000);
+    return () => clearInterval(id);
+  }, []);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -392,10 +410,14 @@ const HeroIntro = ({ videoSrc = "" }) => {
           ))}
         </h1>
 
-        <p className="hero-tagline mx-auto mt-6 max-w-2xl text-[17px] leading-relaxed text-white/85 sm:text-[20px]">
-          One digital wallet for every store you love. Collect points, unlock
-          tiers and enjoy live rewards, all from a single app.
-        </p>
+        <div className="hero-tagline mx-auto mt-6 flex min-h-[6.5rem] max-w-2xl items-start justify-center sm:min-h-[5rem]">
+          <p
+            key={tagIndex}
+            className="hero-rotate text-[17px] leading-relaxed text-white/85 sm:text-[20px]"
+          >
+            {PRODUCT_OVERVIEW[tagIndex]}
+          </p>
+        </div>
 
         <div className="hero-cta mt-10 flex flex-wrap items-center justify-center gap-4">
           <a
@@ -467,6 +489,21 @@ const HeroIntro = ({ videoSrc = "" }) => {
           opacity: 0;
           animation: fadeUp 0.9s ease-out 1.1s forwards;
         }
+        .hero-rotate {
+          animation: rotateIn 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+        }
+        @keyframes rotateIn {
+          0% {
+            opacity: 0;
+            transform: translateY(14px);
+            filter: blur(6px);
+          }
+          100% {
+            opacity: 1;
+            transform: translateY(0);
+            filter: blur(0);
+          }
+        }
         .hero-cta {
           opacity: 0;
           animation: fadeUp 0.9s ease-out 1.35s forwards;
@@ -502,6 +539,7 @@ const HeroIntro = ({ videoSrc = "" }) => {
           .hero-letter,
           .hero-kicker,
           .hero-tagline,
+          .hero-rotate,
           .hero-cta,
           .hero-scroll-dot {
             animation: none;
