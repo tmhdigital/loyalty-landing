@@ -177,49 +177,23 @@ const manual = {
       ],
     },
     {
-      title: "Redeeming Points",
+      title: "Earning & Redeeming Points",
       blocks: [
+        { type: "h3", text: "Earning Points" },
         {
           type: "p",
-          text: "When you want to use your points at checkout (in-store), you approve a redemption request from your app:",
+          text: "Earn loyalty points every time you make an eligible purchase from a participating business and unlock greater rewards as your loyalty grows:",
         },
         {
           type: "ol",
           items: [
-            "From the Wallet or the merchant's checkout (New Sale) flow, choose Redeem Points.",
-            "Advise the Merchant the number of points you want to redeem.",
-            "Confirm the Redemption Request that comes on your customer app. The request is sent in real time from the merchant's point-of-sale device for approval.",
-            "Once the merchant confirms the transaction, your points balance and gift card wallet update automatically.",
+            "Visit a participating merchant and purchase an eligible product or service. You will receive loyalty points based on the earning percentage associated with your current loyalty tier for that business",
+            "Continue visiting and transacting with the same merchant to accumulate loyalty points. As your points increase, you may qualify for higher loyalty tiers, allowing you to earn points at higher rates on future purchases",
+            "Each loyalty point earned has a redemption value of PKR 10, which can be redeemed in accordance with the business redemption policy",
+            "To maintain your current loyalty tier, you should make at least one eligible purchase with the business every six months. If no qualifying transaction is recorded during this period, your loyalty tier may be downgraded, resulting in a lower points earning rate for future purchases",
           ],
         },
-        {
-          type: "note",
-          text: "Redemption requests are delivered instantly using a live connection between your app and the merchant's device, so make sure you have an internet connection while checking out.",
-        },
-      ],
-    },
-     {
-      title: "Earnings & Redeeming Points",
-      blocks: [
-        {
-          type: "p",
-          text: "When you want to use your points at checkout (in-store), you approve a redemption request from your app:",
-        },
-        {
-          type: "ol",
-          items: [
-            "From the Wallet or the merchant's checkout (New Sale) flow, choose Redeem Points.",
-            "Advise the Merchant the number of points you want to redeem.",
-            "Confirm the Redemption Request that comes on your customer app. The request is sent in real time from the merchant's point-of-sale device for approval.",
-            "Once the merchant confirms the transaction, your points balance and gift card wallet update automatically.",
-          ],
-        },
-        {
-          type: "note",
-          text: "Redemption requests are delivered instantly using a live connection between your app and the merchant's device, so make sure you have an internet connection while checking out.",
-        },
-      ],
-      blocks: [
+        { type: "h3", text: "Redeeming Points" },
         {
           type: "p",
           text: "When you want to use your points at checkout (in-store), you approve a redemption request from your app:",
