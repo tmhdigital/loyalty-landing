@@ -55,7 +55,7 @@ const FEATURES = [
 
 const Features = () => {
   return (
-    <section id="features" className="py-16 lg:py-20 bg-white">
+    <section id="features" className="py-16 lg:py-20">
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         <Reveal>
           <div className="max-w-2xl mb-16">
@@ -75,12 +75,12 @@ const Features = () => {
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {FEATURES.map(({ icon: Icon, title, desc }, i) => (
             <Reveal key={title} delay={(i % 4) * 80}>
-              <div className="group h-full p-6 rounded-2xl border border-line hover:border-primary/40 hover:shadow-card transition-all bg-white">
-                <div className="w-12 h-12 rounded-xl bg-primaryLight text-primary flex items-center justify-center mb-5 group-hover:bg-primary group-hover:text-white transition-colors">
+              <div className="group relative h-full rounded-2xl border border-line bg-white p-6 shadow-[0_14px_34px_-14px_rgba(20,102,63,0.22)] transition-all duration-300 hover:-translate-y-1.5 hover:border-primary/40 hover:shadow-[0_28px_54px_-18px_rgba(20,102,63,0.36)]">
+                <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-primaryLight to-emerald-100 text-primary shadow-[0_10px_20px_-6px_rgba(20,102,63,0.35)] transition-all duration-300 group-hover:from-primary group-hover:to-primaryDark group-hover:text-white group-hover:shadow-[0_14px_26px_-6px_rgba(20,102,63,0.5)]">
                   <Icon />
                 </div>
-                <h3 className="font-semibold text-ink text-[17px] mb-2">{title}</h3>
-                <p className="text-[14px] text-muted leading-relaxed">{desc}</p>
+                <h3 className="mb-2 text-[17px] font-semibold text-ink">{title}</h3>
+                <p className="text-[14px] leading-relaxed text-muted">{desc}</p>
               </div>
             </Reveal>
           ))}

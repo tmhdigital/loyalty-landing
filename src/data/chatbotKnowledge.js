@@ -188,4 +188,6 @@ export const SUGGESTED_QUESTIONS = [
   "Is it free for businesses to join?",
   "How do I redeem my loyalty points?",
   "How do loyalty tiers work?",
+  "What's the Membership plan?",
+  "What's the difference between the two dashboards?",
 ];

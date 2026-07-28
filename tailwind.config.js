@@ -38,11 +38,26 @@ export default {
           "50%": { transform: "translateY(100%)" },
           "100%": { transform: "translateY(0%)" },
         },
+        popIn: {
+          "0%": { transform: "scale(0.85) translateY(10px)", opacity: "0" },
+          "100%": { transform: "scale(1) translateY(0)", opacity: "1" },
+        },
+        bubbleIn: {
+          "0%": { transform: "translateY(8px) scale(0.98)", opacity: "0" },
+          "100%": { transform: "translateY(0) scale(1)", opacity: "1" },
+        },
+        chipIn: {
+          "0%": { transform: "translateY(6px)", opacity: "0" },
+          "100%": { transform: "translateY(0)", opacity: "1" },
+        },
       },
       animation: {
         float: "float 6s ease-in-out infinite",
         stamp: "stamp 0.5s ease-out forwards",
         scan: "scan 2.4s ease-in-out infinite",
+        popIn: "popIn 0.28s cubic-bezier(0.16, 1, 0.3, 1) forwards",
+        bubbleIn: "bubbleIn 0.25s ease-out forwards",
+        chipIn: "chipIn 0.25s ease-out forwards",
       },
     },
   },
