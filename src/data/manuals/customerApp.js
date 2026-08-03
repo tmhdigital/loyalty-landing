@@ -138,6 +138,7 @@ const manual = {
             "Use Search Merchants to find a specific store by name, or scroll the list of nearby merchants.",
             "Tap a merchant to open its details page.",
             "Use specific filters to search out specific merchants with location, distance, favourite merchants and Services.",
+            "The customer can view merchant's points and tier details and transaction history from merchant details screen.",
           ],
         },
         { type: "h3", text: "Merchant Details" },
