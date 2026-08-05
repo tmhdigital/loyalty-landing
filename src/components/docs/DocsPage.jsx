@@ -4,7 +4,6 @@ import { usePathname } from "next/navigation";
 import DocsSidebar, { DocsMobileNav } from "./DocsSidebar";
 // import DocsTabs from "./DocsTabs";
 import ManualSections from "./ManualContent";
-
 const DocsPage = ({ eyebrow, title, description, meta, sections }) => {
   const pathname = usePathname();
   const isManuals = pathname.startsWith("/manuals");
