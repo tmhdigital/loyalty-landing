@@ -35,46 +35,48 @@ export const DocsMobileNav = ({ currentPath }) => {
   );
 };
 
-const DocsSidebar = ({ currentPath, sections }) => {
+const DocsSidebar = ({ currentPath, sections, showDocsNav = true }) => {
   const { isAdmin } = useAdminAuth();
   const docsNav = getDocsNav(isAdmin);
 
   return (
     <nav className="hidden lg:block">
       <div className="sticky top-28 space-y-8">
-        <div>
-          <p className="font-semibold text-ink text-[13px] uppercase tracking-wide mb-4">
-            Documentation
-          </p>
-          <div className="space-y-5">
-            {docsNav.map((group) => (
-              <div key={group.title}>
-                <p className="text-[12px] font-semibold text-muted uppercase tracking-wide mb-2">
-                  {group.title}
-                </p>
-                <ul className="space-y-2">
-                  {group.items.map((item) => {
-                    const active = item.path === currentPath;
-                    return (
-                      <li key={item.path}>
-                        <Link
-                          href={item.path}
-                          className={`text-[13.5px] transition-colors ${
-                            active
-                              ? "text-primary font-semibold"
-                              : "text-muted hover:text-primary"
-                          }`}
-                        >
-                          {item.label}
-                        </Link>
-                      </li>
-                    );
-                  })}
-                </ul>
-              </div>
-            ))}
+        {showDocsNav && (
+          <div>
+            <p className="font-semibold text-ink text-[13px] uppercase tracking-wide mb-4">
+              Documentation
+            </p>
+            <div className="space-y-5">
+              {docsNav.map((group) => (
+                <div key={group.title}>
+                  <p className="text-[12px] font-semibold text-muted uppercase tracking-wide mb-2">
+                    {group.title}
+                  </p>
+                  <ul className="space-y-2">
+                    {group.items.map((item) => {
+                      const active = item.path === currentPath;
+                      return (
+                        <li key={item.path}>
+                          <Link
+                            href={item.path}
+                            className={`text-[13.5px] transition-colors ${
+                              active
+                                ? "text-primary font-semibold"
+                                : "text-muted hover:text-primary"
+                            }`}
+                          >
+                            {item.label}
+                          </Link>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
+        )}
 
         {sections?.length > 0 && (
           <div>

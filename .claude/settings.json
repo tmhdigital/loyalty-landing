@@ -1,7 +1,10 @@
 {
   "permissions": {
     "allow": [
-      "Bash('/c/Program Files/Python314/python.exe' -c ' *)"
+      "Bash('/c/Program Files/Python314/python.exe' -c ' *)",
+      "Bash(mkdir -p /tmp/docx_extract)",
+      "Bash(unzip -o \"REWALDO-terms and conditions.docx\" -d /tmp/docx_extract)",
+      "Read(//tmp/docx_extract/**)"
     ]
   }
 }

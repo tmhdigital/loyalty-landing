@@ -5,10 +5,12 @@ import Link from "next/link";
 import { DASHBOARD_LINKS } from "../config";
 import { useAdminAuth } from "../context/AdminAuthContext";
 import AdminLoginModal from "./AdminLoginModal";
+import ContactModal from "./ContactModal";
 
 const Footer = () => {
   const { isAdmin, logout } = useAdminAuth();
   const [loginOpen, setLoginOpen] = useState(false);
+  const [contactOpen, setContactOpen] = useState(false);
 
   return (
     <footer className="border-t border-line">
@@ -20,7 +22,6 @@ const Footer = () => {
             businesses through one wallet.
           </p>
         </div>
-
         <div>
           <p className="font-semibold text-ink text-[14px] mb-4">Product</p>
           <ul className="space-y-3 text-[14px] text-muted">
@@ -55,9 +56,17 @@ const Footer = () => {
         <div>
           <p className="font-semibold text-ink text-[14px] mb-4">Company</p>
           <ul className="space-y-3 text-[14px] text-muted">
-            <li><a href="#" className="hover:text-primary">Contact us</a></li>
+            <li>
+              <button
+                type="button"
+                onClick={() => setContactOpen(true)}
+                className="hover:text-primary"
+              >
+                Contact us
+              </button>
+            </li>
             <li><Link href="/privacy-policy" className="hover:text-primary">Privacy policy</Link></li>
-            <li><a href="#" className="hover:text-primary">Terms of service</a></li>
+            <li><Link href="/terms-and-conditions" className="hover:text-primary">Terms & Conditions</Link></li>
           </ul>
         </div>
       </div>
@@ -92,6 +101,7 @@ const Footer = () => {
       </div>
 
       <AdminLoginModal open={loginOpen} onClose={() => setLoginOpen(false)} />
+      <ContactModal open={contactOpen} onClose={() => setContactOpen(false)} />
     </footer>
   );
 };
