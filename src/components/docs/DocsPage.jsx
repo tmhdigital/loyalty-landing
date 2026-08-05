@@ -2,7 +2,7 @@
 
 import { usePathname } from "next/navigation";
 import DocsSidebar, { DocsMobileNav } from "./DocsSidebar";
-import DocsTabs from "./DocsTabs";
+// import DocsTabs from "./DocsTabs";
 import ManualSections from "./ManualContent";
 
 const DocsPage = ({ eyebrow, title, description, meta, sections }) => {
@@ -12,7 +12,7 @@ const DocsPage = ({ eyebrow, title, description, meta, sections }) => {
   return (
     <section className="pt-36 pb-24 bg-white">
       <div className="max-w-5xl mx-auto px-6 lg:px-10">
-        <DocsTabs currentPath={pathname} />
+        {/* <DocsTabs currentPath={pathname} /> */}
 
         <div className="max-w-2xl mb-12">
           <p className="text-primary font-semibold text-sm tracking-wide uppercase mb-3">
