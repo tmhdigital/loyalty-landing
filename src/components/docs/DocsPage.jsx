@@ -1,8 +1,8 @@
 "use client";
 
+// import DocsTabs from "./DocsTabs";
 import { usePathname } from "next/navigation";
 import DocsSidebar, { DocsMobileNav } from "./DocsSidebar";
-// import DocsTabs from "./DocsTabs";
 import ManualSections from "./ManualContent";
 const DocsPage = ({ eyebrow, title, description, meta, sections }) => {
   const pathname = usePathname();

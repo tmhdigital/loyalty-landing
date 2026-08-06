@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { DASHBOARD_LINKS } from "../config";
 
 const NAV_LINKS = [
@@ -15,14 +16,22 @@ const NAV_LINKS = [
 ];
 
 const Navbar = () => {
-  const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
+  // Only the homepage opens on the dark animated hero — every other route
+  // (privacy policy, terms, manuals) starts on a plain white background,
+  // so the navbar must never use the "unscrolled" white-on-transparent look there.
+  const isHome = pathname === "/";
+
+  const [scrolledState, setScrolledState] = useState(false);
   const [open, setOpen] = useState(false);
+  const scrolled = isHome ? scrolledState : true;
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 8);
+    if (!isHome) return;
+    const onScroll = () => setScrolledState(window.scrollY > 8);
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  }, [isHome]);
 
   // At the very top the navbar sits over the dark animated intro hero,
   // so links/buttons switch to white for contrast. Once scrolled the
